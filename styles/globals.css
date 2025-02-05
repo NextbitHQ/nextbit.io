@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+
+    /* color schema  */
+    --wcs-gray-100-value: 0, 0%, 95%;
+    --wcs-gray-200-value: 0, 0%, 92%;
+    --wcs-gray-300-value: 0, 0%, 90%;
+    --wcs-gray-400-value: 0, 0%, 92%;
+    --wcs-gray-500-value: 0, 0%, 79%;
+    --wcs-gray-600-value: 0, 0%, 66%;
+    --wcs-gray-700-value: 0, 0%, 56%;
+    --wcs-gray-800-value: 0, 0%, 49%;
+    --wcs-gray-900-value: 0, 0%, 40%;
+    --wcs-gray-1000-value: 0, 0%, 9%;
+    --wcs-blue-100-value: 212, 100%, 97%;
+    --wcs-blue-200-value: 210, 100%, 96%;
+    --wcs-blue-300-value: 210, 100%, 94%;
+    --wcs-blue-400-value: 209, 100%, 90%;
+    --wcs-blue-500-value: 209, 100%, 80%;
+    --wcs-blue-600-value: 208, 100%, 66%;
+    --wcs-blue-700-value: 212, 100%, 48%;
+    --wcs-blue-800-value: 212, 100%, 41%;
+    --wcs-blue-900-value: 211, 100%, 42%;
+    --wcs-blue-1000-value: 211, 100%, 15%;
+
+    --wcs-gray-100: hsla(var(--wcs-gray-100-value), 1);
+    --wcs-gray-200: hsla(var(--wcs-gray-200-value), 1);
+    --wcs-gray-300: hsla(var(--wcs-gray-300-value), 1);
+    --wcs-gray-400: hsla(var(--wcs-gray-400-value), 1);
+    --wcs-gray-500: hsla(var(--wcs-gray-500-value), 1);
+    --wcs-gray-600: hsla(var(--wcs-gray-600-value), 1);
+    --wcs-gray-700: hsla(var(--wcs-gray-700-value), 1);
+    --wcs-gray-800: hsla(var(--wcs-gray-800-value), 1);
+    --wcs-gray-900: hsla(var(--wcs-gray-900-value), 1);
+    --wcs-gray-1000: hsla(var(--wcs-gray-1000-value), 1);
+    --wcs-blue-100: hsla(var(--wcs-blue-100-value), 1);
+    --wcs-blue-200: hsla(var(--wcs-blue-200-value), 1);
+    --wcs-blue-300: hsla(var(--wcs-blue-300-value), 1);
+    --wcs-blue-400: hsla(var(--wcs-blue-400-value), 1);
+    --wcs-blue-500: hsla(var(--wcs-blue-500-value), 1);
+    --wcs-blue-600: hsla(var(--wcs-blue-600-value), 1);
+    --wcs-blue-700: hsla(var(--wcs-blue-700-value), 1);
+    --wcs-blue-800: hsla(var(--wcs-blue-800-value), 1);
+    --wcs-blue-900: hsla(var(--wcs-blue-900-value), 1);
+    --wcs-blue-1000: hsla(var(--wcs-blue-1000-value), 1);
+  }
+}
+
+@layer components{
+  .paragraph{
+    @apply text-base font-normal font-secondary text-gray-900;
+  }
+}
