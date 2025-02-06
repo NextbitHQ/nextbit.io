@@ -2,7 +2,7 @@
 
 import type {NavbarProps} from "@heroui/react";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -32,13 +32,24 @@ const menuItems = [
 
 export default function Component(props: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Navbar
       {...props}
       classNames={{
         base: cn("border-default-100", {
-          "bg-default-200/50 dark:bg-default-100/50": isMenuOpen,
+          "bg-default-200/50 dark:bg-default-100/50 ": isMenuOpen,
+          "border-b border-default-200": scrolled,
         }),
         wrapper: "w-full justify-center",
         item: "hidden md:flex",

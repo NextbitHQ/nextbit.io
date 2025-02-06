@@ -9,31 +9,31 @@ import BrandLogo from "../icons/BrandLogo";
 import { ThemeSwitch } from "../theme-switch";
 
 type SocialIconProps = Omit<IconProps, "icon">;
-  const social=[
+  const social = [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/nextbithq/",
       icon: (props: SocialIconProps) => (
         <Icon {...props} icon="fontisto:facebook" />
       ),
     },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/nextbithq/",
       icon: (props: SocialIconProps) => (
         <Icon {...props} icon="fontisto:instagram" />
       ),
     },
     {
-      name: "Twitter",
-      href: "#",
+      name: "X",
+      href: "https://www.x.com/nextbithq/",
       icon: (props: SocialIconProps) => (
         <Icon {...props} icon="fontisto:twitter" />
       ),
     },
     {
       name: "GitHub",
-      href: "#",
+      href: "https://github.com/NextbitHQ",
       icon: (props: SocialIconProps) => (
         <Icon {...props} icon="fontisto:github" />
       ),
@@ -66,7 +66,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="flex justify-between w-full py-20 px-5 ">
+    <footer className="flex justify-between w-full p-5 border-t-1 border-default-200">
         <div className="">
           <p className="text-smalltext-default-400">
             &copy; 2025 Nextbit Inc. All rights reserved.
