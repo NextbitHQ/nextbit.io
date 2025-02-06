@@ -69,7 +69,7 @@ export default function Hero() {
                     bounce: 0.3
                   }}
                 >
-                 We're unique: we combine a full-time, handpicked team of desginers & Developers with the leatest Low-code,No-code and 
+                 We&apos;re unique: we combine a full-time, handpicked team of desginers & Developers with the leatest Low-code,No-code and 
                  AI tools to deliver amazing apps  in 1/4 the time & cost of normal agency.
                 </m.div>
 

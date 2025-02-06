@@ -5,9 +5,6 @@ import React from "react";
 import { Button, Input, Link } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
-import BrandLogo from "../icons/BrandLogo";
-import { ThemeSwitch } from "../theme-switch";
-
 type SocialIconProps = Omit<IconProps, "icon">;
   const social = [
     {
