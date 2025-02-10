@@ -18,7 +18,7 @@ export function SecondaryButton({
   return (
     <Button
       onClick={onClick}
-      className={`h-10 w-[163px] border-1 border-default-400 px-[16px] py-[10px] text-small font-medium leading-5 ${className}`}
+      className={`h-10 w-[168px] md:w-[183px] border-1 border-default-500 px-[16px] py-[10px] text-base font-medium font-primary leading-5 ${className}`}
       radius="sm"
       variant="bordered"
       endContent={

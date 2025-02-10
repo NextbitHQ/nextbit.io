@@ -11,7 +11,7 @@ export function PrimaryButton({ onClick, children, className = "" }: PrimaryButt
   return (
     <Button
       onClick={onClick}
-      className={`h-10 w-[163px] bg-default-foreground px-[16px] py-[10px] text-small font-medium leading-5 text-background ${className}`}
+      className={`h-10 w-[168px] md:w-[183px] bg-default-foreground px-[16px] py-[10px] text-base font-medium leading-5 font-secondary text-background ${className}`}
       radius="sm"
     >
       {children}
