@@ -26,9 +26,13 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-			color:{
-				primary:"#000",
-				secondary:"#666",
+			primary:{
+				DEFAULT:'#ffffff',
+				light:'#BDBDBD'
+			},
+			secondary:{
+				DEFAULT:'#292929',
+				light:'#656565'
 			},
 			gray: {
 				100: 'hsl(var(--wcs-gray-100-value))',

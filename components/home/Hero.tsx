@@ -13,8 +13,7 @@ import { SecondaryButton } from "../shared/secondary-button";
 
 export default function Hero() {
   return (
-    <div className="relative flex h-screen min-h-dvh w-full flex-col overflow-hidden bg-background">
-      
+    <div className="relative flex w-full flex-col overflow-hidden bg-background">
       <main className="container mx-auto mt-6 md:mt-[80px] flex flex-col md:flex-row gap-x-5 justify-between items-start">
         <section className="w-full md:w-3/5 z-20 flex flex-col items-start justify-center gap-[18px] sm:gap-6">
           <Button
@@ -94,7 +93,7 @@ export default function Hero() {
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-default-50">
             <Icon icon={feature.icon} className="h-5 w-5 text-[#292929] dark:text-[#BDBDBD] " />
               </div>
-              <span className="text-sm font-secondary font-medium text-[#292929] dark:text-[#BDBDBD]">{feature.text}</span>
+              <span className="text-sm font-secondary font-medium text-[#292929] dark:text-white">{feature.text}</span>
             </div>
           ))}
             </m.div>

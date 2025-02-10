@@ -3,7 +3,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
-import ServiceImage from '@/asset/images/home/nb-hero-img.png';
+import service1 from '@/asset/images/home/services/1.png';
+import service2 from '@/asset/images/home/services/2.png';
+import service3 from '@/asset/images/home/services/3.png';
+import service4 from '@/asset/images/home/services/4.png';
+import service5 from '@/asset/images/home/services/5.png';
+import service6 from '@/asset/images/home/services/6.png';
+
 import { FaBrain, FaCode, FaGlobe, FaShoppingCart, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { SiPaloaltosoftware } from "react-icons/si";
 import { PrimaryButton } from '../shared/parimary-button';
@@ -143,6 +149,15 @@ const services = [
   }
 ];
 
+const servesComponent = [
+  { component: service1 },
+  { component: service2 },
+  { component: service3 },
+  { component: service4 },
+  { component: service5 },
+  { component: service6 }
+];
+
 export default function Services() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -151,111 +166,89 @@ export default function Services() {
   });
 
   return (
-    <div className="flex flex-col md:flex-row h-screen justify-center items-center">
-      <div ref={containerRef} className="w-full md:w-[65%] h-screen overflow-y-auto">
+    <div className="flex flex-col md:flex-row justify-center items-start py-[120px] md:py-[160px]">
+      <div ref={containerRef} className="w-full md:w-3/5 h-screen overflow-y-auto scrollbar-hide">
         {services.map((service, index) => {
-          const yRange = useTransform(scrollYProgress, [0, 1], [0, -100 * index]);
-          const opacityRange = useTransform(scrollYProgress, 
-            [index * 0.1, index * 0.1 + 0.1], 
-            [1, 0]
-          );
-
           return (
-            <motion.div 
-              key={index} 
-              style={{ 
-                y: yRange,
-                opacity: opacityRange,
-              }}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className='px-6 py-20'
+            <motion.div
+              key={index}
+               className='py-14'
             >
-              <motion.div 
-                className="flex items-center text gap-4 font-extrabold text-lg md:text-xl text-black dark:text-white mb-12"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
+              <motion.div
+                className="flex items-center text-sm md:text-xl gap-x-3 leading-7 font-semibold text-black dark:text-white font-secondary"
+                
               >
                 {service.icon}
-                <h2>{service.category}</h2>
+                <h3>{service.category}</h3>
               </motion.div>
 
-              <motion.h3 
-                className='text-start text-[clamp(40px,10vw,40px)] text-black dark:text-white font-bold leading-[1.2] tracking-tighter sm:text-[50px]'
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6 }}
+              <motion.h3
+                className='text-start text-4xl md:text-[48px] font-primary leading-[44px] md:leading-[58px] text-black dark:text-white font-bold tracking-1.3  mt-5 md:mt-11 '
+                
               >
                 {service.heading}
               </motion.h3>
 
-              <motion.h4 
-                className='text-start leading-7 text-black dark:text-white font-semibold text-lg md:text-xl my-3'
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7 }}
+              <motion.h4
+                className='text-start leading-6 md:leading-7 text-black dark:text-[#BDBDBD] font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
+             
               >
                 {service.subheading}
               </motion.h4>
 
-              <motion.p 
-                className='text-start font-normal leading-7 text-default-500 sm:text-[18px]'
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
+              <motion.p
+                className='text-start font-normal leading-6 md:leading-7 text-secondary- dark:text-primary-light text-sm md:text-lg mt-9'
+                
               >
                 {service.description}
               </motion.p>
-
               <motion.div
-                initial={{ y: 60, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9 }}
+                className='mt-8'
+               
               >
-                <PrimaryButton className='my-8'>{service.button}</PrimaryButton>
-              </motion.div>
-
-              <motion.div 
-                className='mt-10'
-                initial={{ y: 70, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <h4 className='text-xl md:text-2xl font-semibold text-black dark:text-white'>
-                  Why Choose Us?
-                </h4>
-                <ul className='mt-5'>
+                <ul className='mt-4'>
                   {service.whyChooseUs.map((reason, idx) => (
-                    <motion.li 
-                      key={idx} 
-                      className='flex items-center gap-2 text-start mb-3'
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.5 }}
+                    <motion.li
+                      key={idx}
+                      className='flex items-center gap-x-2 text-start mb-2'
                     >
                       <div>
-                        <span className='font-semibold text-black dark:text-white'>{reason.title} -</span>
-                        <span className='ml-2 font-normal text-default-500'>{reason.description}</span>
+                        <span className='font-semibold text-black dark:text-white text-xs md:text-sm leading-6 md:leading-7 font-secondary'>{reason.title} -</span>
+                        <span className='ml-2 font-normal text-secondary  dark:text-primary-light text-xs md:text-sm leading-6 md:leading-7 font-secondary '>{reason.description}</span>
                       </div>
                     </motion.li>
                   ))}
                 </ul>
               </motion.div>
+              <motion.div
+                
+              >
+                <PrimaryButton className='my-6'>{service.button}</PrimaryButton>
+              </motion.div>
+            </motion.div>
+          );
+
+        })}
+
+      </div>
+
+      <div className='w-full md:w-2/5 relative h-screen'>
+        {servesComponent.map((service, index) => {
+
+          return (
+            <motion.div
+              key={index}
+              className="absolute top-0 right-0 w-full h-full"
+            >
+              <Image
+                src={service.component}
+                alt="Service illustration"
+                className="object-contain h-full w-full"
+              />
             </motion.div>
           );
         })}
       </div>
-
-      <div className='w-[35%] right-0 top-0 h-screen'>
-        <Image 
-          src={ServiceImage} 
-          alt="Service illustration"
-          className="object-contain h-full w-full"
-        />
-      </div>
     </div>
   );
 }
-
