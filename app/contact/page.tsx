@@ -5,7 +5,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export default function Contact() {
   return (
     <div className="relative isolate ">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">

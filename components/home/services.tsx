@@ -190,14 +190,14 @@ export default function Services() {
               </motion.h3>
 
               <motion.h4
-                className='text-start leading-6 md:leading-7 text-black dark:text-[#BDBDBD] font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
+                className='text-start leading-6 md:leading-7 text-black dark:text-primary-light font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
              
               >
                 {service.subheading}
               </motion.h4>
 
               <motion.p
-                className='text-start font-normal leading-6 md:leading-7 text-secondary- dark:text-primary-light text-sm md:text-lg mt-9'
+                className='text-start font-normal leading-6 md:leading-7 text-secondary-light dark:text-primary-light text-sm md:text-lg mt-9'
                 
               >
                 {service.description}

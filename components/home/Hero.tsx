@@ -2,8 +2,6 @@
 import React from "react";
 import {Icon} from "@iconify/react";
 import {AnimatePresence, LazyMotion, domAnimation, m} from "framer-motion";
-import FadeInImage from "./fade-in-image";
-import AppScreenshotSkewed from "./app-screenshot-skewed";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import HeroImage from "@/asset/images/home/nb-hero-img.png";
@@ -17,7 +15,7 @@ export default function Hero() {
       <main className="container mx-auto mt-6 md:mt-[80px] flex flex-col md:flex-row gap-x-5 justify-between items-start">
         <section className="w-full md:w-3/5 z-20 flex flex-col items-start justify-center gap-[18px] sm:gap-6">
           <Button
-        className="h-10 overflow-hidden border-1 border-default-100 bg-[#F7F7F7] dark:bg-inherit px-[16px] py-[10px] text-sm font-medium leading-5 text-[#656565] dark:text-[#BDBDBD]"
+        className="h-10 overflow-hidden border-1 border-default-100 bg-[#F7F7F7] dark:bg-inherit px-[16px] py-[10px] text-sm font-medium leading-5 text-secondary-light dark:text-primary-light"
         endContent={
           <Icon
             className="flex-none outline-none [&>path]:stroke-[2] ml-2"
@@ -58,7 +56,7 @@ export default function Hero() {
             <m.div
           key="description"
           animate={{ filter: "blur(0px)", opacity: 1, x: 0 }}
-          className="text-start font-normal leading-[24px] md:leading-[28px] text-[#656565] dark:text-[#BDBDBD] text-sm md:text-lg font-secondary"
+          className="text-start font-normal leading-[24px] md:leading-[28px] text-secondary-light dark:text-primary-light text-sm md:text-lg font-secondary"
           initial={{ filter: "blur(16px)", opacity: 0, x: 30 }}
           transition={{
             duration: 0.8,
@@ -91,9 +89,9 @@ export default function Hero() {
           ].map((feature, index) => (
             <div key={index} className="flex items-center gap-x-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-default-50">
-            <Icon icon={feature.icon} className="h-5 w-5 text-[#292929] dark:text-[#BDBDBD] " />
+            <Icon icon={feature.icon} className="h-5 w-5 text-secondary dark:text-primary-light " />
               </div>
-              <span className="text-sm font-secondary font-medium text-[#292929] dark:text-white">{feature.text}</span>
+              <span className="text-sm font-secondary font-medium text-secondary dark:text-white">{feature.text}</span>
             </div>
           ))}
             </m.div>
