@@ -23,8 +23,8 @@ import { AcmeIcon } from "../icons/acme";
 
 
 const menuItems = [
-  { label: "Services", link: "/services" },
-  { label: "How We Work", link: "/how-we-work" },
+  { label: "Services", link: "#services" },
+  { label: "Process", link: "/process" },
   { label: "About", link: "/about" },
   { label: "Contact", link: "/contact" },
 ];
