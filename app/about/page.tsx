@@ -31,7 +31,8 @@ export default function About() {
         'We believe in fostering a culture of creativity, adaptability, and relentless innovation, ensuring that every solution we create is impactful and future-proof.',
         'At Nextbit, our strength lies in our people—a team of forward-thinkers, creators, and industry disruptors dedicated to building world-class technology.',
       ]}
-       
+      button={true}
+      buttonLabel='More About Our Team'
       />
       <GetInTouch />
     </div>

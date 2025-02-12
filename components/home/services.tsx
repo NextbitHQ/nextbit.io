@@ -38,7 +38,7 @@ const services = [
     ]
   },
   {
-    category: "Software Development / Custom SaaS Development / MVP Creation",
+    category: "Software Development",
     heading: "From Concept to Execution—Fast.",
     subheading: "Whether it's a full-scale SaaS, a custom tool, or an MVP, we build it right the first time.",
     description: "Whether launching a new SaaS, developing an internal application, or testing an MVP, we make your idea a reality with clean, scalable, and efficient software solutions. No frills, just solid execution.",
@@ -60,7 +60,7 @@ const services = [
     ]
   },
   {
-    category: "Web Development / CMS Migration",
+    category: "Web Development",
     heading: "Websites That Work, Not Just Look Good",
     subheading: "Fast, secure, and scalable web solutions—whether you're starting fresh or upgrading your CMS.",
     description: "From high-performance websites to seamless CMS migrations, we ensure your web presence is fast, secure, and designed for growth. Whether starting fresh or moving platforms, we make it frictionless.",
@@ -126,7 +126,7 @@ const services = [
     ]
   },
   {
-    category: "Product Design / UI/UX",
+    category: "Product Design",
     heading: "Design That Does More Than Look Good",
     subheading: "We create intuitive, conversion-driven designs that elevate your product experience.",
     description: "Good design isn't just about looks—it's about function. We create UI/UX that's intuitive, conversion-driven, and enhances user experiences, making every interaction smooth and meaningful.",
@@ -183,21 +183,21 @@ export default function Services() {
               </motion.div>
 
               <motion.h3
-                className='text-start text-4xl md:text-[48px] font-primary leading-[44px] md:leading-[58px] text-black dark:text-white font-bold tracking-1.3  mt-5 md:mt-11 '
+                className='text-start text-4xl md:text-[48px] font-primary leading-[1.2] tracking-[-0.04em] text-black dark:text-white font-bold mt-5 md:mt-11 '
                 
               >
                 {service.heading}
               </motion.h3>
 
               <motion.h4
-                className='text-start leading-6 md:leading-7 text-black dark:text-primary-light font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
+                className='text-start leading-[1.2] tracking-[-0.04em] text-black dark:text-primary-light font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
              
               >
                 {service.subheading}
               </motion.h4>
 
               <motion.p
-                className='text-start font-normal leading-6 md:leading-7 text-secondary-light dark:text-primary-light text-sm md:text-lg mt-9'
+                className='text-start font-normal leading-[1.36] tracking-[-0.02em] md:leading-7 text-secondary-light dark:text-primary-light text-sm md:text-lg mt-9'
                 
               >
                 {service.description}

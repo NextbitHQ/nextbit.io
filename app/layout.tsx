@@ -1,18 +1,12 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-import { Mona_Sans, Geist, Inter } from "next/font/google";
+import { Geist, Inter } from "next/font/google";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/heroui/Navbar";
-const MonaFont = Mona_Sans({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-mona",
-  display: "swap",
-});
+
 const GeistFont = Geist({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -58,7 +52,6 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background antialiased font-secondary text-sm text-gray-900",
-          MonaFont.variable,
           GeistFont.variable,
         )}
       >
