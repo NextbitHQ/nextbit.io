@@ -1,6 +1,6 @@
-import AboutUs from '@/components/about/AboutUs';
-import GetInTouch from '@/components/about/GetInTouch';
-import AboutRepeatableSection from '@/components/about/AboutRepeatableSection';
+import AboutUs from '@/components/about/about-us';
+import GetInTouch from '@/components/about/get-In-touch';
+import AboutRepeatableSection from '@/components/about/about-repeatable-section';
 import ourStoryImage from '@/asset/images/about/our-story.png';
 import team from '@/asset/images/about/team.png';
 

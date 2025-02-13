@@ -1,8 +1,7 @@
-import GetInTouch from "@/components/about/GetInTouch";
-import workImage from '@/asset/images/work/work.png';
-import HeroProcess from "@/components/process/HeroProcess";
-import ProcessRepeatableSection from "@/components/process/ProcessRepeatableSection";
-import CompanyBenefit from "@/components/process/CompanyBenefit";
+import GetInTouch from "@/components/about/get-In-touch";
+import ProcessRepeatableSection from "@/components/process/process-repeatable-section";
+import CompanyBenefit from "@/components/process/company-benefit";
+import ProcessHeader from "@/components/process/process-header";
 
 const data = [
   {
@@ -96,7 +95,7 @@ const data = [
 export default function Process(){
   return(
   <div>
-   <HeroProcess />
+   <ProcessHeader/>
    {
     data.map((item, index) => (
        <ProcessRepeatableSection key={index}

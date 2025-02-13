@@ -5,7 +5,7 @@ import { Geist, Inter } from "next/font/google";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/heroui/Navbar";
+import Navbar from "@/components/heroui/navbar";
 
 const GeistFont = Geist({
   subsets: ["latin"],

@@ -1,4 +1,3 @@
-import Image, { StaticImageData } from "next/image";
 import { LuCheck } from "react-icons/lu";
 import { TertiaryButton } from "../shared/tertiary-button";
 

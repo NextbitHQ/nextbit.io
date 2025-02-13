@@ -1,4 +1,3 @@
-import { PrimaryButton } from "@/components/shared/parimary-button";
 import { TertiaryButton } from "@/components/shared/tertiary-button";
 import {
   BuildingOffice2Icon,

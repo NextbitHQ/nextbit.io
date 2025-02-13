@@ -1,5 +1,5 @@
 
-export default function HeroProcess() {
+export default function ProcessHeader() {
     return (
         <div className="pt-12 md:pt-16">
             <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.04em]">Our Approach to Building a Laser-Focused MVP with Precisions</h2>

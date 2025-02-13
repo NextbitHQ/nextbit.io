@@ -1,15 +1,17 @@
-import Compare from "@/components/home/Compare";
-import Hero from "@/components/home/Hero";
-import Industry from "@/components/home/Industry";
-import Services from "@/components/home/Services";
+import Compare from "@/components/home/compare";
+import CoreFeature from "@/components/home/core-feature";
+import Hero from "@/components/home/hero";
+import Industry from "@/components/home/industry";
+import Services from "@/components/home/services";
 
 export default function Home() {
   return (
     <section>
-      <Hero />
+       <Hero />
+       <CoreFeature/>
        <Services/>
-      <Industry/>
-      <Compare/>
+       <Industry/>
+       <Compare/>
     </section>
   );
 }
