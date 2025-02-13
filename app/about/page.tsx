@@ -1,6 +1,6 @@
-import AboutUs from '@/components/about/AboutUs';
-import GetInTouch from '@/components/about/GetInTouch';
-import AboutRepeatableSection from '@/components/about/AboutRepeatableSection';
+import AboutUs from '@/components/about/about-us';
+import GetInTouch from '@/components/about/get-In-touch';
+import AboutRepeatableSection from '@/components/about/about-repeatable-section';
 import ourStoryImage from '@/asset/images/about/our-story.png';
 import team from '@/asset/images/about/team.png';
 
@@ -31,7 +31,8 @@ export default function About() {
         'We believe in fostering a culture of creativity, adaptability, and relentless innovation, ensuring that every solution we create is impactful and future-proof.',
         'At Nextbit, our strength lies in our people—a team of forward-thinkers, creators, and industry disruptors dedicated to building world-class technology.',
       ]}
-       
+      button={true}
+      buttonLabel='More About Our Team'
       />
       <GetInTouch />
     </div>

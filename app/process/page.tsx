@@ -1,51 +1,93 @@
-import GetInTouch from "@/components/about/GetInTouch";
-import workImage from '@/asset/images/work/work.png';
-import HeroProcess from "@/components/process/HeroProcess";
-import ProcessRepeatableSection from "@/components/process/ProcessRepeatableSection";
-import Opportunities from "@/components/process/Opportunities";
+import GetInTouch from "@/components/about/get-In-touch";
+import ProcessRepeatableSection from "@/components/process/process-repeatable-section";
+import CompanyBenefit from "@/components/process/company-benefit";
+import ProcessHeader from "@/components/process/process-header";
 
 const data = [
   {
     title: "Discovery",
     heading: "We're crafting the project planning tool",
     description: "Use AI to streamline processes, improve decision-making, and create new efficiencies. From machine learning models to AI-powered automation, we help businesses integrate intelligence into their workflows in a simple manner.",
-    imageSrc: workImage,
-    imageAlt: "discovery"
+    firstButtonLable:'7 Day',
+    SecondButtonLabel:'2 Mettings',
+    processSlutions:[
+      'AI solutions that make impact that make impact',
+      'AI solutions that make impact that make impact',
+      'AI solutions that make impact that make impact',
+      'AI solutions that make impact that make impact',
+      'AI solutions that make impact that make impact',
+    
+    ]
   },
   {
     title: "Strategy & Planning",
     heading: "We're crafting the project planning tool",
     description: "Leveraging the latest technologies to create responsive, user-friendly web applications. We specialize in building scalable and dynamic solutions that meet the needs of modern businesses.",
-    imageSrc: workImage,
-    imageAlt: "development"
+    firstButtonLable:'7 Day',
+    SecondButtonLabel:'2 Mettings',
+    processSlutions:[
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+    ]
   },
   {
     title: "Design & Development",
     heading: "We're crafting the project planning tool",
     description: "Utilizing AI-driven analytics to optimize marketing campaigns and increase engagement. We provide data-driven insights to refine targeting, maximize conversions, and improve ROI.",
-    imageSrc: workImage,
-    imageAlt: "marketing"
+    firstButtonLable:'7 Day',
+    SecondButtonLabel:'2 Mettings',
+    processSlutions:[
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+    ]
   },
   {
     title: "3.Testing & Quality Assurance",
     heading: "We're crafting the project planning tool",
     description: "Our team works closely with businesses to develop innovative strategies that drive growth and success. From market analysis to competitive positioning, we help create sustainable advantages.",
-    imageSrc: workImage,
-    imageAlt: "strategy"
+    firstButtonLable:'7 Day',
+    SecondButtonLabel:'2 Mettings',
+    processSlutions:[
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+    ]
   },
   {
     title: "Launch & SEO Optimization",
     heading: "We're crafting the project planning tool",
     description: "We create visually stunning, intuitive, and user-centered designs that enhance the user experience. Our design philosophy centers around usability and aesthetic appeal.",
-    imageSrc: workImage,
-    imageAlt: "design"
+    firstButtonLable:'7 Day',
+    SecondButtonLabel:'2 Mettings',
+    processSlutions:[
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+    ]
   },
   {
     title: "Ongoing Support & Optimization",
     heading: "We're crafting the project planning tool",
     description: "Using advanced analytics and machine learning to provide actionable insights. We help businesses turn data into strategic decisions that improve performance and drive results.",
-    imageSrc: workImage,
-    imageAlt: "analytics"
+    firstButtonLable:'7 Day',
+    SecondButtonLabel:'2 Mettings',
+    processSlutions:[
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+      'AI solutions that make an impact make an impact',
+    ]
   }
 ];
 
@@ -53,19 +95,20 @@ const data = [
 export default function Process(){
   return(
   <div>
-   <HeroProcess />
+   <ProcessHeader/>
    {
     data.map((item, index) => (
        <ProcessRepeatableSection key={index}
        title={`${index + 1}. ${item.title}`}
        heading={item.heading}
        description={item.description}
-       imageSrc={item.imageSrc}
-       imageAlt={item.imageAlt}
+       firstButtonLable={item.firstButtonLable}
+       SecondButtonLabel={item.SecondButtonLabel}
+        processSlutions={item.processSlutions}
         />
     ))
    }
-   <Opportunities/>
+   <CompanyBenefit/>
    <GetInTouch />
   </div>
   );

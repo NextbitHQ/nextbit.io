@@ -38,7 +38,7 @@ const services = [
     ]
   },
   {
-    category: "Software Development / Custom SaaS Development / MVP Creation",
+    category: "Software Development",
     heading: "From Concept to Execution—Fast.",
     subheading: "Whether it's a full-scale SaaS, a custom tool, or an MVP, we build it right the first time.",
     description: "Whether launching a new SaaS, developing an internal application, or testing an MVP, we make your idea a reality with clean, scalable, and efficient software solutions. No frills, just solid execution.",
@@ -60,7 +60,7 @@ const services = [
     ]
   },
   {
-    category: "Web Development / CMS Migration",
+    category: "Web Development",
     heading: "Websites That Work, Not Just Look Good",
     subheading: "Fast, secure, and scalable web solutions—whether you're starting fresh or upgrading your CMS.",
     description: "From high-performance websites to seamless CMS migrations, we ensure your web presence is fast, secure, and designed for growth. Whether starting fresh or moving platforms, we make it frictionless.",
@@ -126,7 +126,7 @@ const services = [
     ]
   },
   {
-    category: "Product Design / UI/UX",
+    category: "Product Design",
     heading: "Design That Does More Than Look Good",
     subheading: "We create intuitive, conversion-driven designs that elevate your product experience.",
     description: "Good design isn't just about looks—it's about function. We create UI/UX that's intuitive, conversion-driven, and enhances user experiences, making every interaction smooth and meaningful.",
@@ -166,88 +166,96 @@ export default function Services() {
   });
 
   return (
-    <div className="flex flex-col md:flex-row justify-center items-start py-[120px] md:py-[160px]">
-      <div ref={containerRef} className="w-full md:w-3/5 h-screen overflow-y-auto scrollbar-hide">
-        {services.map((service, index) => {
-          return (
-            <motion.div
-              key={index}
-               className='py-14'
-            >
-              <motion.div
-                className="flex items-center text-sm md:text-xl gap-x-3 leading-7 font-semibold text-black dark:text-white font-secondary"
-                
-              >
-                {service.icon}
-                <h3>{service.category}</h3>
-              </motion.div>
-
-              <motion.h3
-                className='text-start text-4xl md:text-[48px] font-primary leading-[44px] md:leading-[58px] text-black dark:text-white font-bold tracking-1.3  mt-5 md:mt-11 '
-                
-              >
-                {service.heading}
-              </motion.h3>
-
-              <motion.h4
-                className='text-start leading-6 md:leading-7 text-black dark:text-primary-light font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
-             
-              >
-                {service.subheading}
-              </motion.h4>
-
-              <motion.p
-                className='text-start font-normal leading-6 md:leading-7 text-secondary-light dark:text-primary-light text-sm md:text-lg mt-9'
-                
-              >
-                {service.description}
-              </motion.p>
-              <motion.div
-                className='mt-8'
-               
-              >
-                <ul className='mt-4'>
-                  {service.whyChooseUs.map((reason, idx) => (
-                    <motion.li
-                      key={idx}
-                      className='flex items-center gap-x-2 text-start mb-2'
-                    >
-                      <div>
-                        <span className='font-semibold text-black dark:text-white text-xs md:text-sm leading-6 md:leading-7 font-secondary'>{reason.title} -</span>
-                        <span className='ml-2 font-normal text-secondary  dark:text-primary-light text-xs md:text-sm leading-6 md:leading-7 font-secondary '>{reason.description}</span>
-                      </div>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-              <motion.div
-                
-              >
-                <PrimaryButton className='my-6'>{service.button}</PrimaryButton>
-              </motion.div>
-            </motion.div>
-          );
-
-        })}
-
+    <div className='py-14'>
+      <div>
+        <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">First-Class
+        Development experience
+        </h2>
+        <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">Use AI to streamline processes, improve decision-making, and create new efficiencies. From machine learning models to AI-powered automation, we help businesses integrate intelligence into their workflows.</p>
       </div>
+      <div className="flex flex-col md:flex-row justify-center items-start py-[100px] md:py-[120px]">
+        <div ref={containerRef} className="w-full md:w-3/5 h-screen overflow-y-auto scrollbar-hide">
+          {services.map((service, index) => {
+            return (
+              <motion.div
+                key={index}
 
-      <div className='w-full md:w-2/5 relative h-screen'>
-        {servesComponent.map((service, index) => {
+              >
+                <motion.div
+                  className="flex items-center text-sm md:text-xl gap-x-3 leading-7 font-semibold text-black dark:text-white font-secondary"
 
-          return (
-            <motion.div
-              key={index}
-              className="absolute top-0 right-0 w-full h-full"
-            >
-              <Image
-                src={service.component}
-                alt="Service illustration"
-                className="object-contain h-full w-full"
-              />
-            </motion.div>
-          );
-        })}
+                >
+                  {service.icon}
+                  <h3>{service.category}</h3>
+                </motion.div>
+
+                <motion.h3
+                  className='text-start text-4xl md:text-[48px] font-primary leading-[1.2] tracking-[-0.04em] text-black dark:text-white font-bold mt-5 md:mt-11 '
+
+                >
+                  {service.heading}
+                </motion.h3>
+
+                <motion.h4
+                  className='text-start leading-[1.2] tracking-[-0.04em] text-black dark:text-primary-light font-semibold font-secondary text-sm md:text-xl mt-5 md:mt-6'
+
+                >
+                  {service.subheading}
+                </motion.h4>
+
+                <motion.p
+                  className='text-start font-normal leading-[1.36] tracking-[-0.02em] md:leading-7 text-secondary-light dark:text-primary-light text-sm md:text-lg mt-9'
+
+                >
+                  {service.description}
+                </motion.p>
+                <motion.div
+                  className='mt-8'
+
+                >
+                  <ul className='mt-4'>
+                    {service.whyChooseUs.map((reason, idx) => (
+                      <motion.li
+                        key={idx}
+                        className='flex items-center gap-x-2 text-start mb-2'
+                      >
+                        <div>
+                          <span className='font-semibold text-black dark:text-white text-xs md:text-sm leading-6 md:leading-7 font-secondary'>{reason.title} -</span>
+                          <span className='ml-2 font-normal text-secondary  dark:text-primary-light text-xs md:text-sm leading-6 md:leading-7 font-secondary '>{reason.description}</span>
+                        </div>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+                <motion.div
+
+                >
+                  <PrimaryButton className='my-6'>{service.button}</PrimaryButton>
+                </motion.div>
+              </motion.div>
+            );
+
+          })}
+
+        </div>
+
+        <div className='w-full md:w-2/5 relative h-screen'>
+          {servesComponent.map((service, index) => {
+
+            return (
+              <motion.div
+                key={index}
+                className="absolute top-0 right-0 w-full h-full"
+              >
+                <Image
+                  src={service.component}
+                  alt="Service illustration"
+                  className="object-contain h-full w-full"
+                />
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

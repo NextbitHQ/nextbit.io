@@ -1,4 +1,4 @@
-import { PrimaryButton } from "@/components/shared/parimary-button";
+import { TertiaryButton } from "@/components/shared/tertiary-button";
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
@@ -168,7 +168,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-             <PrimaryButton>Send Message</PrimaryButton>
+             <TertiaryButton showIcon={false}>Send Message</TertiaryButton>
             </div>
           </div>
         </form>

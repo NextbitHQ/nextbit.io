@@ -47,7 +47,7 @@ export default function Component(props: NavbarProps) {
     <Navbar
       {...props}
       classNames={{
-        base: cn("border-default-100", {
+        base: cn("border-default-100 bg-white dark:bg-black", {
           "bg-default-200/50 dark:bg-default-100/50 ": isMenuOpen,
           "border-b border-default-200": scrolled,
         }),
@@ -63,7 +63,7 @@ export default function Component(props: NavbarProps) {
         <div >
         <AcmeIcon size={34} />
         </div>
-        <Link href="/" className="text-default-500 text-lg font-medium">
+        <Link href="/" className="text-secondary dark:text-white text-lg font-medium">
          Nextbit        
         </Link>
       </NavbarBrand>
