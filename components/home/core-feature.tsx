@@ -1,24 +1,26 @@
-import { Aperture } from 'lucide-react';
+
+import { Icon } from "@iconify/react";
+
 const coreFeatures = [
     {
-        icon: <Aperture />,
-        title: 'Corss-time Project',
-        description: 'Use AI to processes, improve decision-making.'
+        icon: <Icon icon={'prime:box'} width={22} />,
+        title: 'Scalable Architecture',
+        description: 'Our technology grows with your business, ensuring seamless performance from startup to enterprise level.'
     },
     {
-        icon: <Aperture />,
-        title: 'Corss-time Project',
-        description: 'Use AI to processes, improve decision-making.'
+        icon: <Icon icon={'prime:box'} width={22} />,
+        title: 'Enterprise-Grade Security',
+        description: 'Stay protected with cutting-edge security protocols, safeguarding your data and transactions against evolving threats'
     },
     {
-        icon: <Aperture />,
-        title: 'Corss-time Project',
-        description: 'Use AI to processes, improve decision-making.'
+        icon: <Icon icon={'prime:box'} width={22} />,
+        title: 'Lightning-Fast Performance',
+        description: 'Speed matters. Experience ultra-fast load times and smooth interactions for a frictionless user experience.'
     },
     {
-        icon: <Aperture />,
-        title: 'Corss-time Project',
-        description: 'Use AI to processes, improve decision-making.'
+        icon: <Icon icon={'prime:box'} width={22} />,
+        title: 'AI-Driven Automation',
+        description: 'Run operations with intelligent automation, reducing manual effort and boosting efficiency across workflows.'
     },
 ]
 export default function CoreFeature() {

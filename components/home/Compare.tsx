@@ -6,56 +6,44 @@ import { Tabs, Tab, Card, CardBody } from "@heroui/react";
 import React from "react";
 
 const nextbitSulution = [
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
-    'AI solutions that make an impact',
+    'Fast, optimized workflows',
+    'Subscription or one-time',
+    'Full-stack team, AI automation',
+    'Dedicated support & reports',
+    'Easy scaling & customization',
 ]
 const otherSulution = [
     {
         name: "Freelancer",
         icon: LuX,
         features: [
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
+            'Varies per project',
+            'Hourly or per project',
+            'Varies by freelancer',
+            'Hard to guarantee',
+            'Hard to scale',
         ]
     },
     {
-        name: "Agency",
+        name: "Agencies",
         icon: LuX,
         features: [
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
+            'Weeks to months',
+            'Expensive retainers',
+            'Siloed departments',
+            'Multiple gatekeepers',
+            'Rigid contracts',
         ]
     },
     {
         name: "Full-time",
         icon: LuX,
         features: [
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
-            'AI solutions ',
+            'Slower execution',
+            'Fixed salaries',
+            'Limited in-house skills',
+            'Internal silos',
+            'Difficult to expand',
         ]
     }
 ]
@@ -66,13 +54,13 @@ export default function Compare() {
         <div className="pt-20 md:pt-32 pb-6 md:pb-10">
             <div>
                 <div>
-                    <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">Leveraging Opportunities to Maximize Benefits from Every Perspective</h2>
-                    <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">Use AI to streamline processes, improve decision-making, and create new efficiencies. From machine learning models to AI-powered automation, we help businesses integrate intelligence into their workflows in a simple manner.</p>
+                    <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">Turning Opportunities into Maximum Value</h2>
+                    <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">We make sure that every resource, choice, and investment contributes to long-term success by emphasizing innovation, efficiency, and scalability.</p>
                 </div>
 
                 <div className="hidden md:flex flex-col md:flex-row gap-6 mt-10">
 
-                    <div className="w-full md:w-2/5 bg-[#FAFAFA] dark:bg-dark-gradient p-4 rounded-md border border-default-200 dark:border-y-default-50 dark:border-x-default-200">
+                    <div className="w-full md:w-[33%] bg-[#FAFAFA] dark:bg-dark-gradient p-4 rounded-md border border-default-200 dark:border-y-default-50 dark:border-x-default-200">
                         <h3 className="text-secondary dark:text-primary text-3xl md:text-[28px] leading-[1.2] tracking-[-0.02em] font-semibold font-primary"> Nexbit Studio</h3>
                         <ul className="mt-1">
                             {nextbitSulution.map((item, index) => (
@@ -83,7 +71,7 @@ export default function Compare() {
                             ))}
                         </ul>
                     </div>
-                    <div className="w-full md:w-3/5 grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div className="w-full md:w-[67%] grid grid-cols-1 md:grid-cols-3 gap-3">
 
                         {
                             otherSulution.map((solution, index) => (

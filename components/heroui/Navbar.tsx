@@ -20,11 +20,12 @@ import {cn} from "@heroui/react";
 import { ThemeSwitch } from "../theme-switch";
 import { Label } from "@radix-ui/react-select";
 import { AcmeIcon } from "../icons/acme";
+import BrandIcon from "../icons/BrandIcon";
 
 
 const menuItems = [
-  { label: "Services", link: "#services" },
-  { label: "Process", link: "/process" },
+  { label: "Services", link: "/services" },
+  { label: "How we work", link: "/process" },
   { label: "About", link: "/about" },
   { label: "Contact", link: "/contact" },
 ];
@@ -60,12 +61,9 @@ export default function Component(props: NavbarProps) {
     >
       {/* Left Content */}
       <NavbarBrand>
-        <div >
-        <AcmeIcon size={34} />
-        </div>
-        <Link href="/" className="text-secondary dark:text-white text-lg font-medium">
-         Nextbit        
-        </Link>
+          <Link href="/" className="text-secondary dark:text-white text-lg font-medium">
+            <BrandIcon />
+          </Link>
       </NavbarBrand>
 
       {/* Center Content */}

@@ -9,11 +9,11 @@ interface SecondaryButtonProps {
   className?: string;
 }
 
-export function SecondaryButton({ 
-  onClick, 
-  children, 
+export function SecondaryButton({
+  onClick,
+  children,
   showIcon = true,
-  className = "" 
+  className = ""
 }: SecondaryButtonProps) {
   return (
     <Button

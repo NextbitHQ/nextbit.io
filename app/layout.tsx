@@ -5,7 +5,7 @@ import { Geist, Inter } from "next/font/google";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/heroui/navbar";
+import Navbar from "@/components/heroui/Navbar";
 
 const GeistFont = Geist({
   subsets: ["latin"],
@@ -63,9 +63,9 @@ export default function RootLayout({
             enableColorScheme: true,
           }}
         >
-          <div className="relative min-h-screen  border border-default-200 max-w-5xl mx-auto px-6">
+          <div className="relative min-h-screen  border border-default-200 max-w-5xl mx-auto px-4">
             <Navbar/>
-            
+
             <main className="">{children}</main>
             <Footer />
           </div>

@@ -1,26 +1,27 @@
+import GetInTouch from "@/components/about/get-In-touch";
+import { PrimaryButton } from "@/components/shared/parimary-button";
 import { TertiaryButton } from "@/components/shared/tertiary-button";
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import { Button } from "@heroui/button";
 
 export default function Contact() {
   return (
     <div className="relative isolate ">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
+        <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:pt-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-gray-900/10 lg:w-1/2">
-    
+
             </div>
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-black dark:text-primary sm:text-5xl">
-              Get in touch
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-black dark:text-primary sm:text-[40px]">
+            Let’s Build Something Great Together.
             </h2>
             <p className="mt-6 text-lg/8 text-secondary-light dark:text-primary-light">
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci
-              molestie a eu arcu. Sed ut tincidunt integer elementum id sem.
-              Arcu sed malesuada et magna.
+              Have questions or ready to get started? Reach out to us, we're here to help!
             </p>
             <dl className="mt-10 space-y-4 text-base/7 text-secondary-light dark:text-primary-light">
               <div className="flex gap-x-4">
@@ -32,9 +33,9 @@ export default function Contact() {
                   />
                 </dt>
                 <dd>
-                  545 Mavis Island
+                  House 789, Level 6, Road 11, Avenue 4,
                   <br />
-                  Chicago, IL 99191
+                  Mirpur DOHS, Dhaka, Bangladesh
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -48,9 +49,9 @@ export default function Contact() {
                 <dd>
                   <a
                     className="text-secondary-light dark:text-primary-light"
-                    href="tel:+1 (555) 234-5678"
+                    href="tel:+1 (689) 309‑5372"
                   >
-                    +1 (555) 234-5678
+                    +1 (689) 309‑5372
                   </a>
                 </dd>
               </div>
@@ -65,9 +66,9 @@ export default function Contact() {
                 <dd>
                   <a
                     className="text-secondary-light dark:text-primary-light"
-                    href="mailto:hello@example.com"
+                    href="mailto:hello@nextbit.io"
                   >
-                    hello@example.com
+                    hello@nextbit.io
                   </a>
                 </dd>
               </div>
@@ -76,14 +77,14 @@ export default function Contact() {
         </div>
         <form
           action="#"
-          className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48"
+          className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:pt-48"
           method="POST"
         >
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
                 <label
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  className="block text-sm/6 font-semibold text-secondary-light dark:text-primary-light"
                   htmlFor="first-name"
                 >
                   First name
@@ -100,7 +101,7 @@ export default function Contact() {
               </div>
               <div>
                 <label
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  className="block text-sm/6 font-semibold text-secondary-light dark:text-primary-light"
                   htmlFor="last-name"
                 >
                   Last name
@@ -117,7 +118,7 @@ export default function Contact() {
               </div>
               <div className="sm:col-span-2">
                 <label
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  className="block text-sm/6 font-semibold text-secondary-light dark:text-primary-light"
                   htmlFor="email"
                 >
                   Email
@@ -125,7 +126,7 @@ export default function Contact() {
                 <div className="mt-2.5">
                   <input
                     autoComplete="email"
-                    className="block w-full border border-gray-600 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-indigo-600"
+                    className="block w-full border border-gray-600 rounded-md px-3.5 py-2 text-base text-secondary-light dark:text-primary-light placeholder:text-gray-400 focus:outline-indigo-600"
                     id="email"
                     name="email"
                     type="email"
@@ -134,7 +135,7 @@ export default function Contact() {
               </div>
               <div className="sm:col-span-2">
                 <label
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  className="block text-sm/6 font-semibold text-secondary-light dark:text-primary-light"
                   htmlFor="phone-number"
                 >
                   Phone number
@@ -151,7 +152,7 @@ export default function Contact() {
               </div>
               <div className="sm:col-span-2">
                 <label
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  className="block text-sm/6 font-semibold text-secondary-light dark:text-primary-light"
                   htmlFor="message"
                 >
                   Message
@@ -168,11 +169,13 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-             <TertiaryButton showIcon={false}>Send Message</TertiaryButton>
+             {/* <TertiaryButton showIcon={false}>Send Message</TertiaryButton> */}
+             <PrimaryButton>Send Message</PrimaryButton>
             </div>
           </div>
         </form>
       </div>
+      <GetInTouch />
     </div>
   );
 }

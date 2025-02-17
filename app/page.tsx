@@ -1,7 +1,8 @@
-import Compare from "@/components/home/compare";
+import GetInTouch from "@/components/about/get-In-touch";
+import Compare from "@/components/home/Compare";
 import CoreFeature from "@/components/home/core-feature";
-import Hero from "@/components/home/hero";
-import Industry from "@/components/home/industry";
+import Hero from "@/components/home/Hero";
+import Industry from "@/components/home/Industry";
 import Services from "@/components/home/services";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
        <Services/>
        <Industry/>
        <Compare/>
+       <GetInTouch />
     </section>
   );
 }

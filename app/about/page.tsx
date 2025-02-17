@@ -11,22 +11,22 @@ export default function About() {
   return (
     <div>
       <AboutUs />
-      <AboutRepeatableSection 
+      <AboutRepeatableSection
       title='Our Story'
-       imageSrc={ourStoryImage} 
+       imageSrc={ourStoryImage}
       imageAlt='Our Story'
-       heading='Innovation, Simplicity, and Impact'
+       heading='Innovation, Simplicity, and Impact.'
        descriptions={[
         'What started as a mission to enhance eCommerce functionality soon evolved into a full-fledged tech powerhouse.',
         'Today, we stand as a force of innovation, committed to reshaping the digital commerce experience and ensuring businesses have the tools they need to succeed.',
       ]}
-       
+
       />
-      <AboutRepeatableSection 
+      <AboutRepeatableSection
       title='Our Team'
-       imageSrc={team} 
+       imageSrc={team}
       imageAlt='Our Story'
-       heading='Passion. Expertise. Innovation. '
+       heading='Passion. Expertise. Innovation.'
       descriptions={[
         'We believe in fostering a culture of creativity, adaptability, and relentless innovation, ensuring that every solution we create is impactful and future-proof.',
         'At Nextbit, our strength lies in our people—a team of forward-thinkers, creators, and industry disruptors dedicated to building world-class technology.',

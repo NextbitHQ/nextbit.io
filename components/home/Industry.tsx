@@ -28,6 +28,10 @@ const industries = [
     },
     {
         icon: <LuHeartPulse className="w-5 h-5" />,
+        text: "Cybersecurity"
+    },
+    {
+        icon: <LuHeartPulse className="w-5 h-5" />,
         text: "Healthcare"
     },
     {
@@ -36,19 +40,15 @@ const industries = [
     },
     {
         icon: <LuGraduationCap className="w-5 h-5" />,
-        text: "Education"
+        text: "Entertainment"
     },
-    {
-        icon: <LuBriefcase className="w-5 h-5" />,
-        text: "Business Services"
-    }
 ];
 export default function Industry() {
     return (
         <div className="pb-5">
             <div>
-                <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">Leveraging Opportunities to Maximize</h2>
-                <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">Use AI to streamline processes, improve decision-making, and create new efficiencies. From machine learning models to AI-powered automation, we help businesses integrate intelligence into their workflows.</p>
+                <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">Unlocking Growth Potential</h2>
+                <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">Seize every opportunity with a strategic approach that drives innovation and scalability. Nextbit.io equips you with the tools and insights needed to optimize operations, expand market reach, and maximize business impact.</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
                 {industries.map((industry, index) => (
