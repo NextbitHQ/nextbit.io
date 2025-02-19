@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 import { Button } from "@heroui/react";
@@ -10,18 +10,39 @@ import { SecondaryButton } from "../shared/secondary-button";
 
 import bg_grid from "@/asset/images/home/bg_grid.png";
 import brand_icon_img from "@/asset/images/home/brand_icon_img.png";
+import { useTheme } from "next-themes";
 
 export default function Hero() {
+  const { theme, systemTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true); // Ensures theme is loaded only on the client
+  }, []);
+
+  if (!isMounted) return null; // Avoid hydration mismatch
+
+  const isDark = theme === "dark" || (theme === "system" && systemTheme === "dark");
+
+
+
   return (
     <div className="relative flex w-full flex-col overflow-hidden bg-background">
       <main
-        className="container mx-auto mt-6 md:py-[120px] flex flex-col md:flex-row gap-x-5 justify-between items-center"
+        className={`container mx-auto mt-6 md:py-[120px] flex flex-col md:flex-row gap-x-5 justify-between items-center
+        `}
         style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`,
+          backgroundImage: isDark ? `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`: "",
           backgroundSize: "288%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "-23% 49%",
         }}
+        // style={{
+        //   background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`,
+        //   backgroundSize: "288%",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundPosition: "-23% 49%",
+        // }}
       >
         <section className="w-full md:w-3/5 z-20 flex flex-col items-start justify-center gap-[18px] sm:gap-6">
           <Button
