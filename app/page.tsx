@@ -8,12 +8,12 @@ import Services from "@/components/home/services";
 export default function Home() {
   return (
     <section>
-       <Hero />
-       <CoreFeature/>
-       <Services/>
-       <Industry/>
-       <Compare/>
-       <GetInTouch />
+      <Hero />
+      <CoreFeature />
+      <Services />
+      <Industry />
+      <Compare />
+      <GetInTouch />
     </section>
   );
 }

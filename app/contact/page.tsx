@@ -1,12 +1,11 @@
-import GetInTouch from "@/components/about/get-In-touch";
-import { PrimaryButton } from "@/components/shared/parimary-button";
-import { TertiaryButton } from "@/components/shared/tertiary-button";
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import { Button } from "@heroui/button";
+
+import GetInTouch from "@/components/about/get-In-touch";
+import { PrimaryButton } from "@/components/shared/parimary-button";
 
 export default function Contact() {
   return (
@@ -14,14 +13,13 @@ export default function Contact() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:pt-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-gray-900/10 lg:w-1/2">
-
-            </div>
+            <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-gray-900/10 lg:w-1/2" />
             <h2 className="text-4xl font-semibold tracking-tight text-pretty text-black dark:text-primary sm:text-[40px]">
-            Let’s Build Something Great Together.
+              Let&apos;s Build Something Great Together.
             </h2>
             <p className="mt-6 text-lg/8 text-secondary-light dark:text-primary-light">
-              Have questions or ready to get started? Reach out to us, we're here to help!
+              Have questions or ready to get started? Reach out to us, we&apos;re
+              here to help!
             </p>
             <dl className="mt-10 space-y-4 text-base/7 text-secondary-light dark:text-primary-light">
               <div className="flex gap-x-4">
@@ -169,8 +167,8 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-             {/* <TertiaryButton showIcon={false}>Send Message</TertiaryButton> */}
-             <PrimaryButton>Send Message</PrimaryButton>
+              {/* <TertiaryButton showIcon={false}>Send Message</TertiaryButton> */}
+              <PrimaryButton>Send Message</PrimaryButton>
             </div>
           </div>
         </form>

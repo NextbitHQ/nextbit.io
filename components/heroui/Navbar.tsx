@@ -1,6 +1,6 @@
 "use client";
 
-import type {NavbarProps} from "@heroui/react";
+import type { NavbarProps } from "@heroui/react";
 
 import React, { useEffect } from "react";
 import {
@@ -12,16 +12,12 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
-  Button,
   Divider,
 } from "@heroui/react";
-import {Icon} from "@iconify/react";
-import {cn} from "@heroui/react";
-import { ThemeSwitch } from "../theme-switch";
-import { Label } from "@radix-ui/react-select";
-import { AcmeIcon } from "../icons/acme";
-import BrandIcon from "../icons/BrandIcon";
+import { cn } from "@heroui/react";
 
+import { ThemeSwitch } from "../theme-switch";
+import BrandIcon from "../icons/BrandIcon";
 
 const menuItems = [
   { label: "Services", link: "/services" },
@@ -30,17 +26,19 @@ const menuItems = [
   { label: "Contact", link: "/contact" },
 ];
 
-
 export default function Component(props: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
+
       setScrolled(isScrolled);
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -61,29 +59,36 @@ export default function Component(props: NavbarProps) {
     >
       {/* Left Content */}
       <NavbarBrand>
-          <Link href="/" className="text-secondary dark:text-white text-lg font-medium">
-            <BrandIcon />
-          </Link>
+        <Link
+          className="text-secondary dark:text-white text-lg font-medium"
+          href="/"
+        >
+          <BrandIcon />
+        </Link>
       </NavbarBrand>
 
       {/* Center Content */}
-      <NavbarContent justify="center" className="space-x-4">
-      {menuItems.map((item, index) => (
-            <NavbarItem key={index+1}>
-              <Link href={item.link} className="text-default-500 text-sm">
-                {item.label}
-              </Link>
-            </NavbarItem>
-          ))}
+      <NavbarContent className="space-x-4" justify="center">
+        {menuItems.map((item, index) => (
+          <NavbarItem key={index + 1}>
+            <Link className="text-default-500 text-sm" href={item.link}>
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
         <NavbarItem>
-           <ThemeSwitch />
+          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenuToggle className="text-default-400 md:hidden" />
       <NavbarMenu className="top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="mb-2 w-full text-default-500" href={item.link} size="md">
+            <Link
+              className="mb-2 w-full text-default-500"
+              href={item.link}
+              size="md"
+            >
               {item.label}
             </Link>
             {index < menuItems.length - 1 && <Divider className="opacity-50" />}

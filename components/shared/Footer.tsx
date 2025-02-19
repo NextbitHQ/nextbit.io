@@ -2,7 +2,7 @@
 import type { IconProps } from "@iconify/react";
 
 import React from "react";
-import { Button, Input, Link } from "@heroui/react";
+import { Link } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
 type SocialIconProps = Omit<IconProps, "icon">;
@@ -63,7 +63,8 @@ const Footer = () => {
   );
 
   return (
-    <footer >
+    <footer>
+      {/*
       <div className="flex justify-between w-full p-5 border-t-1 border-default-200">
         <div className="">
           <p className="text-smalltext-default-400">
@@ -77,6 +78,18 @@ const Footer = () => {
               <item.icon aria-hidden="true" className="w-4" />
             </Link>
           ))}
+        </div>
+      </div>
+      */}
+
+      <div className="relative ">
+        <div className="relative overflow-hidden h-[300px]">
+          <p
+            className="absolute bottom-[-4vw] left-[-1.1vw] leading-[1.3]  text-white dark:text-black [text-shadow:0_0_1px_gray,0_0_1px_gray,0_0_1px_gray,0_0_1px_gray]
+            text-[clamp(5rem,25vw,16rem)]"
+          >
+            NEXTBIT
+          </p>
         </div>
       </div>
     </footer>

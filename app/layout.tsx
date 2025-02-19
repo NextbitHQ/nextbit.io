@@ -2,7 +2,9 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { Geist, Inter } from "next/font/google";
+
 import { Providers } from "./providers";
+
 import { siteConfig } from "@/config/site";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/heroui/Navbar";
@@ -64,7 +66,7 @@ export default function RootLayout({
           }}
         >
           <div className="relative min-h-screen  border border-default-200 max-w-5xl mx-auto px-4">
-            <Navbar/>
+            <Navbar />
 
             <main className="">{children}</main>
             <Footer />
