@@ -112,21 +112,20 @@ jobs:
             module.exports = {
               apps: [{
                 name: '${{ steps.repo-name.outputs.REPO_NAME }}',
-                script: 'npm',
-                args: 'start',
-                env: {
-                  NODE_ENV: 'production',
-                  PORT: '${{ vars.APP_PORT || 3000 }}'
-                },
-                max_memory_restart: '200M',
-                exec_mode: 'cluster',
-                instances: 'max',
-                watch: false,
-                autorestart: true,
-                merge_logs: true,
-                log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
-                out_file: '/dev/null',
-                error_file: '/dev/null'
+                script: 'npm start',
+                port: 4001,
               }]
-            }
+            };
             EOL
+
+            # Check if the app is already running in PM2
+            if pm2 list | grep -q "${{ steps.repo-name.outputs.REPO_NAME }}"; then
+              # Restart the existing application
+              pm2 restart "${{ steps.repo-name.outputs.REPO_NAME }}" --update-env
+            else
+              # Start a new instance of the application
+              pm2 start ecosystem.config.js
+            fi
+
+            # Save the PM2 process list
+            pm2 save
