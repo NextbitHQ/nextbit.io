@@ -1,0 +1,103 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check Required Variables
+        run: |
+          [[ -z "${{ vars.SSH_HOST }}" ]] && echo "SSH_HOST is required" && exit 1
+          [[ -z "${{ vars.SSH_USER }}" ]] && echo "SSH_USER is required" && exit 1
+          [[ -z "${{ vars.DEPLOY_DIR }}" ]] && echo "DEPLOY_DIR is required" && exit 1
+          [[ -z "${{ secrets.SSH_PRIVATE_KEY }}" ]] && echo "SSH_PRIVATE_KEY is required" && exit 1
+
+      - name: Get Repository Name
+        id: repo-name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+          if_key_exists: replace
+
+      - name: Backup and Deploy
+        run: |
+          # Create backup
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "if [ -d ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }} ]; then cp -r ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }} ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }}_backup_$(date +%Y%m%d_%H%M%S); fi"
+
+          # Deploy using rsync
+          rsync -avz --delete \
+            --exclude=".git" \
+            --exclude="node_modules" \
+            --exclude=".env" \
+            --exclude=".next/cache" \
+            --include=".next" \
+            --include=".next/**" \
+            --include="public" \
+            --include="public/**" \
+            --include="package*.json" \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            ./ ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }}
+
+      - name: Setup and Start Application
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.SSH_HOST }}
+          username: ${{ vars.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }}
+
+            # Install dependencies
+            npm ci --production
+
+            # Create or update PM2 config
+            echo "module.exports = {
+              apps: [{
+                name: '${{ steps.repo-name.outputs.REPO_NAME }}',
+                script: 'npm',
+                args: 'start',
+                env: {
+                  NODE_ENV: 'production',
+                  PORT: '${{ vars.APP_PORT || 3000 }}'
+                },
+                max_memory_restart: '200M',
+              }]
+            }" > ecosystem.config.js
+
+            # Start/Reload PM2
+            if pm2 describe ${{ steps.repo-name.outputs.REPO_NAME }} > /dev/null; then
+              pm2 reload ecosystem.config.js
+            else
+              pm2 start ecosystem.config.js
+            fi
+
+            # Save PM2 config
+            pm2 save
