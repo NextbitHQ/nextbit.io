@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: "22"
+  NODE_VERSION: "20"
 
 jobs:
   deploy:
@@ -17,10 +17,15 @@ jobs:
 
       - name: Check Required Variables
         run: |
-          [[ -z "${{ vars.SSH_HOST }}" ]] && echo "SSH_HOST is required" && exit 1
-          [[ -z "${{ vars.SSH_USER }}" ]] && echo "SSH_USER is required" && exit 1
-          [[ -z "${{ vars.DEPLOY_DIR }}" ]] && echo "DEPLOY_DIR is required" && exit 1
-          [[ -z "${{ secrets.SSH_PRIVATE_KEY }}" ]] && echo "SSH_PRIVATE_KEY is required" && exit 1
+          [[ -z "$SSH_HOST" ]] && echo "SSH_HOST is required" && exit 1
+          [[ -z "$SSH_USER" ]] && echo "SSH_USER is required" && exit 1
+          [[ -z "$DEPLOY_DIR" ]] && echo "DEPLOY_DIR is required" && exit 1
+          [[ -z "$SSH_PRIVATE_KEY" ]] && echo "SSH_PRIVATE_KEY is required" && exit 1
+        env:
+          SSH_HOST: ${{ vars.SSH_HOST }}
+          SSH_USER: ${{ vars.SSH_USER }}
+          DEPLOY_DIR: ${{ vars.DEPLOY_DIR }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Get Repository Name
         id: repo-name
@@ -47,12 +52,8 @@ jobs:
           known_hosts: unnecessary
           if_key_exists: replace
 
-      - name: Backup and Deploy
+      - name: Deploy
         run: |
-          # Create backup
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "if [ -d ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }} ]; then cp -r ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }} ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }}_backup_$(date +%Y%m%d_%H%M%S); fi"
-
-          # Deploy using rsync
           rsync -avz --delete \
             --exclude=".git" \
             --exclude="node_modules" \
@@ -75,11 +76,10 @@ jobs:
           script: |
             cd ${{ vars.DEPLOY_DIR }}/${{ steps.repo-name.outputs.REPO_NAME }}
 
-            # Install dependencies
             npm ci --production
 
-            # Create or update PM2 config
-            echo "module.exports = {
+            cat > ecosystem.config.js << 'EOL'
+            module.exports = {
               apps: [{
                 name: '${{ steps.repo-name.outputs.REPO_NAME }}',
                 script: 'npm',
@@ -89,15 +89,22 @@ jobs:
                   PORT: '${{ vars.APP_PORT || 3000 }}'
                 },
                 max_memory_restart: '200M',
+                exec_mode: 'cluster',
+                instances: 'max',
+                watch: false,
+                autorestart: true,
+                merge_logs: true,
+                log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+                out_file: '/dev/null',
+                error_file: '/dev/null'
               }]
-            }" > ecosystem.config.js
+            }
+            EOL
 
-            # Start/Reload PM2
             if pm2 describe ${{ steps.repo-name.outputs.REPO_NAME }} > /dev/null; then
               pm2 reload ecosystem.config.js
             else
               pm2 start ecosystem.config.js
             fi
 
-            # Save PM2 config
             pm2 save
