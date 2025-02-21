@@ -108,12 +108,14 @@ jobs:
           script: |
             cd ${{ vars.DEPLOY_DIR }}
             npm ci --production
+            npm install
+            npm run build
             cat > ecosystem.config.js << 'EOL'
             module.exports = {
               apps: [{
                 name: '${{ steps.repo-name.outputs.REPO_NAME }}',
                 script: 'npm start',
-                port: ${{ vars.APP_PORT || 4005 }},
+                port: ${{ vars.APP_PORT || 5001 }},
               }]
             };
             EOL
