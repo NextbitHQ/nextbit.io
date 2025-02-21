@@ -113,7 +113,7 @@ jobs:
               apps: [{
                 name: '${{ steps.repo-name.outputs.REPO_NAME }}',
                 script: 'npm start',
-                port: 4001,
+                port: ${{ vars.APP_PORT || 4005 }},
               }]
             };
             EOL
