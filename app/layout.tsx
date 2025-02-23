@@ -1,13 +1,11 @@
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
+import {Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { Geist, Inter } from "next/font/google";
-
 import { Providers } from "./providers";
-
-import { siteConfig } from "@/config/site";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/heroui/Navbar";
+import { siteConfig } from "@/config/site";
 
 const GeistFont = Geist({
   subsets: ["latin"],
@@ -23,17 +21,18 @@ const InterFont = Inter({
   variable: "--font-inter",
   display: "swap",
 });
-
 export const metadata: Metadata = {
   title: {
+    template:`%s | ${siteConfig.name}`,
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   icons: {
     icon: "/favicon.ico",
   },
 };
+
+
 
 export const viewport: Viewport = {
   themeColor: [

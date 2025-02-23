@@ -6,7 +6,11 @@ import {
 
 import GetInTouch from "@/components/about/get-In-touch";
 import { PrimaryButton } from "@/components/shared/parimary-button";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'This is the contact page',
+};
 export default function Contact() {
   return (
     <div className="relative isolate ">

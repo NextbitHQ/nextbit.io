@@ -3,7 +3,11 @@ import GetInTouch from "@/components/about/get-In-touch";
 import AboutRepeatableSection from "@/components/about/about-repeatable-section";
 import ourStoryImage from "@/asset/images/about/our-story.png";
 import team from "@/asset/images/about/team.png";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'This is the about page',
+};
 export default function About() {
   return (
     <div>

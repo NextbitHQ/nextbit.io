@@ -21,7 +21,7 @@ import BrandIcon from "../icons/BrandIcon";
 
 const menuItems = [
   { label: "Services", link: "/services" },
-  { label: "How we work", link: "/process" },
+  { label: "Process", link: "/process" },
   { label: "About", link: "/about" },
   { label: "Contact", link: "/contact" },
 ];

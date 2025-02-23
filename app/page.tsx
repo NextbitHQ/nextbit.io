@@ -4,9 +4,13 @@ import CoreFeature from "@/components/home/core-feature";
 import Hero from "@/components/home/Hero";
 import HomeServices from "@/components/home/home-services";
 import Industry from "@/components/home/Industry";
-import Services from "@/components/home/services";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'This is the about page',
+};
 export default function Home() {
+
   return (
     <section>
       <Hero />
