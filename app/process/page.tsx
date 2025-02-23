@@ -2,6 +2,7 @@ import GetInTouch from "@/components/about/get-In-touch";
 import ProcessRepeatableSection from "@/components/process/process-repeatable-section";
 import CompanyBenefit from "@/components/process/company-benefit";
 import ProcessHeader from "@/components/process/process-header";
+import { Metadata } from 'next';
 
 const data = [
   {
@@ -50,7 +51,7 @@ const data = [
     ],
   },
   {
-    title: "3.Testing & Quality Assurance",
+    title: "Testing & Quality Assurance",
     heading: "Ensuring Stability, Security, and Performance",
     description:
       "We conduct rigorous testing, including functionality, security, and performance checks. This step ensures that your product is free from bugs, operates efficiently, and delivers a seamless experience across all devices and platforms.",
@@ -95,7 +96,10 @@ const data = [
     ],
   },
 ];
-
+export const metadata: Metadata = {
+  title: 'Process',
+  description: 'This is the process page',
+};
 export default function Process() {
   return (
     <div>

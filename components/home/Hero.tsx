@@ -9,22 +9,19 @@ import { PrimaryButton } from "../shared/parimary-button";
 import { SecondaryButton } from "../shared/secondary-button";
 
 import bg_grid from "@/asset/images/home/bg_grid.png";
-import brand_icon_img from "@/asset/images/home/brand_icon_img.png";
+import brandDarkImage from "@/asset/images/home/brand_icon_img.png";
 import { useTheme } from "next-themes";
 
 export default function Hero() {
   const { theme, systemTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
-
   useEffect(() => {
-    setIsMounted(true); // Ensures theme is loaded only on the client
+    setIsMounted(true); 
   }, []);
 
-  if (!isMounted) return null; // Avoid hydration mismatch
+  if (!isMounted) return null; 
 
   const isDark = theme === "dark" || (theme === "system" && systemTheme === "dark");
-
-
 
   return (
     <div className="relative flex w-full flex-col overflow-hidden bg-background">
@@ -50,7 +47,7 @@ export default function Hero() {
             radius="sm"
             variant="bordered"
           >
-            New onboarding experience
+            The finest digital studio you can rely on
             <Icon height={20} icon={"solar:arrow-right-linear"} width={20} />
           </Button>
           <LazyMotion features={domAnimation}>
@@ -63,7 +60,7 @@ export default function Hero() {
                 ease: "easeOut",
               }}
             >
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="sync">
                 <m.div
                   key="title"
                   className="text-start text-4xl md:text-[56px] font-bold leading-[44px] md:leading-[64px] tracking-[-2px] font-primary mt-2"
@@ -83,9 +80,9 @@ export default function Hero() {
                 </m.div>
                 <m.div
                   key="description"
-                  animate={{ filter: "blur(0px)", opacity: 1, x: 0 }}
+                  animate={{opacity: 1, x: 0 }}
                   className="text-start font-normal text-secondary-light dark:text-primary-light text-sm md:text-lg font-secondary leading-[1.36] tracking-[-0.02em]"
-                  initial={{ filter: "blur(16px)", opacity: 0, x: 30 }}
+                  initial={{opacity: 0, x: 30 }}
                   transition={{
                     duration: 0.8,
                     delay: 0.3,
@@ -93,17 +90,14 @@ export default function Hero() {
                     bounce: 0.3,
                   }}
                 >
-                  We’re unique: we combine a full-time, handpicked team of
-                  designers & Developers with the latest Low-code, No-Code and
-                  AI tools to deliver amazing apps in 1/4 the time & cost of
-                  normal agency.
+                 We&apos;re an engineering studio building cutting-edge digital products and solutions. We partner with disruptive companies and innovative entrepreneurs to fulfill their strategy, design, & development needs.
                 </m.div>
 
                 <m.div
                   key="features"
-                  animate={{ filter: "blur(0px)", opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   className="grid grid-col-1 gap-4 w-full max-w-[466px] mt-2"
-                  initial={{ filter: "blur(16px)", opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 30 }}
                   transition={{
                     duration: 0.8,
                     delay: 0.4,
@@ -111,20 +105,10 @@ export default function Hero() {
                     bounce: 0.3,
                   }}
                 >
-                  {[
-                    {
-                      icon: "material-symbols-light:rectangle-outline",
-                      text: "On-Demand App Design & Dev",
-                    },
-                    { icon: "mdi:user-search-outline", text: "Expert Talent" },
-                    {
-                      icon: "material-symbols:motion-photos-paused-outline-rounded",
-                      text: "Pause or Cancel Anytime",
-                    },
-                    {
-                      icon: "solar:clock-circle-broken",
-                      text: "48-Hour Iteration Cycles",
-                    },
+                   {[
+                    { icon: "solar:users-group-rounded-broken", text: "On-demand senior developers and designers" },
+                    { icon: "solar:pause-broken", text: "Pause or cancel anytime" },
+                    { icon: "solar:clock-circle-broken", text: "Fast iteration cycles" },
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-x-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-md border border-[#292929]">
@@ -142,9 +126,9 @@ export default function Hero() {
 
                 <m.div
                   key="buttons"
-                  animate={{ filter: "blur(0px)", opacity: 1, x: 0 }}
+                  animate={{opacity: 1, x: 0 }}
                   className="flex flex-row gap-x-5 md:gap-x-6 items-center mt-2"
-                  initial={{ filter: "blur(16px)", opacity: 0, x: 30 }}
+                  initial={{opacity: 0, x: 30 }}
                   transition={{
                     duration: 0.8,
                     delay: 0.5,
@@ -165,7 +149,7 @@ export default function Hero() {
             alt="hero image"
             className="w-full h-full opacity-75"
             height={600}
-            src={brand_icon_img}
+            src={brandDarkImage}
             width={400}
           />
         </section>

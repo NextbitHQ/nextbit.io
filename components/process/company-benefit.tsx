@@ -1,4 +1,4 @@
-import { LuCheck } from "react-icons/lu";
+import { LuSmile,LuFrown } from "react-icons/lu";
 const nextbitSulution = [
   "Start with a validated MVP before full development",
   "Go to market 3x faster (within months, not years)",
@@ -47,7 +47,7 @@ export default function CompanyBenefit() {
                 key={index}
                 className="flex items-center text-secondary dark:text-primary gap-x-2 "
               >
-                <LuCheck className="my-3 h-5 w-6 font-semibold" />
+                <LuSmile className="my-3 h-5 w-6 font-semibold" />
                 <span className="text-sm my-3">{item}</span>
               </li>
             ))}
@@ -65,7 +65,7 @@ export default function CompanyBenefit() {
                 key={index}
                 className="flex items-center text-secondary dark:text-primary gap-x-2 "
               >
-                <LuCheck className="my-3 h-5 w-6 font-semibold" />
+                <LuFrown className="my-3 h-5 w-6 font-semibold" />
                 <span className="text-sm my-3">{item}</span>
               </li>
             ))}
