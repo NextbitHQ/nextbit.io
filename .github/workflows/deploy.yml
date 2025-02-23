@@ -1,0 +1,133 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "20"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check Required Variables
+        shell: bash
+        run: |
+          # Debug variable presence (without exposing values)
+          echo "Checking SSH_HOST..."
+          [[ ! -z "${{ vars.SSH_HOST }}" ]] || { echo "SSH_HOST is required"; exit 1; }
+
+          echo "Checking SSH_USER..."
+          [[ ! -z "${{ vars.SSH_USER }}" ]] || { echo "SSH_USER is required"; exit 1; }
+
+          echo "Checking DEPLOY_DIR..."
+          [[ ! -z "${{ vars.DEPLOY_DIR }}" ]] || { echo "DEPLOY_DIR is required"; exit 1; }
+
+          echo "Checking SSH_PRIVATE_KEY..."
+          [[ ! -z "${{ secrets.SSH_PRIVATE_KEY }}" ]] || { echo "SSH_PRIVATE_KEY is required"; exit 1; }
+
+          echo "All required variables are present"
+        env:
+          SSH_HOST: ${{ vars.SSH_HOST }}
+          SSH_USER: ${{ vars.SSH_USER }}
+          DEPLOY_DIR: ${{ vars.DEPLOY_DIR }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Get Repository Name
+        id: repo-name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+          if_key_exists: replace
+
+      - name: Setup Remote Environment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.SSH_HOST }}
+          username: ${{ vars.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Install Node.js if not present
+            if ! command -v node &> /dev/null; then
+              curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+              sudo apt-get install -y nodejs
+            fi
+
+            # Install PM2 globally if not present
+            if ! command -v pm2 &> /dev/null; then
+              sudo npm install -g pm2
+            fi
+
+            # Create deploy directory if it doesn't exist
+            mkdir -p ${{ vars.DEPLOY_DIR }}
+
+      - name: Deploy
+        run: |
+          rsync -avz --delete \
+            --exclude=".git" \
+            --exclude="node_modules" \
+            --exclude=".env" \
+            --exclude=".next/cache" \
+            --include=".next" \
+            --include=".next/**" \
+            --include="public" \
+            --include="public/**" \
+            --include="package*.json" \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            ./ ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:${{ vars.DEPLOY_DIR }}
+
+      - name: Setup and Start Application
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.SSH_HOST }}
+          username: ${{ vars.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ vars.DEPLOY_DIR }}
+            npm ci --production
+            npm install
+            npm run build
+            cat > ecosystem.config.js << 'EOL'
+            module.exports = {
+              apps: [{
+                name: '${{ steps.repo-name.outputs.REPO_NAME }}',
+                script: 'npm start',
+                port: ${{ vars.APP_PORT || 5001 }},
+              }]
+            };
+            EOL
+
+            # Check if the app is already running in PM2
+            if pm2 list | grep -q "${{ steps.repo-name.outputs.REPO_NAME }}"; then
+              # Restart the existing application
+              pm2 restart "${{ steps.repo-name.outputs.REPO_NAME }}" --update-env
+            else
+              # Start a new instance of the application
+              pm2 start ecosystem.config.js
+            fi
+
+            # Save the PM2 process list
+            pm2 save
