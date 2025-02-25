@@ -59,12 +59,11 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
       if (leftSideRef.current) {
         const { scrollTop, scrollHeight, clientHeight } = leftSideRef.current;
         const isAtTop = scrollTop <= 0;
-        const isAtBottom = Math.abs(scrollTop + clientHeight - scrollHeight) < 1;
-
+        const isAtBottom = scrollHeight - scrollTop - clientHeight < 2;
+  
         if ((isAtTop && e.deltaY < 0) || (isAtBottom && e.deltaY > 0)) {
           return;
         }
-
         e.preventDefault();
         const newScrollTop = scrollTop + e.deltaY;
 
@@ -99,7 +98,7 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
       <div
         ref={leftSideRef}
         className="md:w-3/5 md:h-[780px] overflow-y-auto scrollbar-hide"
-        style={{ overscrollBehavior: 'contain' }}
+        // style={{ overscrollBehavior: 'contain' }}
       >
         {services.map((service, index) => (
           <motion.div
