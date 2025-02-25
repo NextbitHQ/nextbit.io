@@ -78,7 +78,7 @@ const Footer = () => {
       <div className=" mt-2 flex justify-between w-full p-5 border-t-1 border-default-200">
         <div className="">
           <p className="text-small text-default-400">
-            &copy; 2025 Nextbit Studio LLC. All rights reserved.
+            &copy; 2025 Nextbit Technologies. All rights reserved.
           </p>
         </div>
         <div className="flex space-x-6">

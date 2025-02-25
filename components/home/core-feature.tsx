@@ -15,7 +15,7 @@ const coreFeatures = [
   },
   {
     icon: <Icon icon={"prime:box"} width={22} />,
-    title: "Lightning-Fast Performance",
+    title: "Lightning-Fast ",
     description:
       "Speed matters. Experience ultra-fast load times and smooth interactions for a frictionless user experience.",
   },
