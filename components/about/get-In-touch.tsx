@@ -5,7 +5,7 @@ import { SecondaryButton } from "../shared/secondary-button";
 export default function GetInTouch() {
   return (
     <div className="">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+      <div className="mx-auto max-w-7xl  py-20 sm:py-28 lg:flex lg:items-center lg:justify-between ">
         <h2 className="max-w-2xl text-2xl md:text-4xl font-semibold leading-[1.2] tracking-[-0.04em] text-secondary dark:text-primary ">
           Ready to dive in? <br />
           Start your free trial today.

@@ -33,7 +33,7 @@ export default function CoreFeature() {
       <h3 className="text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em] font-semibold font-primary">
         Core Features for Maximum Impact
       </h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-5 mt-8">
         {coreFeatures.map((feature, index) => (
           <div key={index}>
             <div className="flex text-secondary dark:text-primary gap-5">
@@ -42,7 +42,7 @@ export default function CoreFeature() {
                 {feature.title}
               </h4>
             </div>
-            <p className="mt-4 text-secondary-light dark:text-primary-light text-sm md:text-base leading-[1.36] tracking-[-0.04em]">
+            <p className="mt-2 md:mt-4 text-secondary-light dark:text-primary-light text-sm md:text-base leading-[1.36] tracking-[-0.04em]">
               {feature.description}
             </p>
           </div>
