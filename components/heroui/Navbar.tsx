@@ -88,6 +88,7 @@ export default function Component(props: NavbarProps) {
               className="mb-2 w-full text-default-500"
               href={item.link}
               size="md"
+              onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
             </Link>
