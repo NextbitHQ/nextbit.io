@@ -66,26 +66,26 @@ const Footer = () => {
     <footer>
     
       <div className="relative ">
-        <div className="relative overflow-hidden h-[300px]">
+        <div className="relative overflow-hidden h-[125px] md:h-[250px]">
           <p
-            className="absolute bottom-[-2.5vw] left-[-3vw] md:left-[-1.3vw] font-semibold leading-[1.3]  text-white dark:text-black [text-shadow:0_0_1px_gray,0_0_1px_gray,0_0_1px_gray,0_0_1px_gray]
-           text-[clamp(4rem,24vw,16rem)] md:text-[clamp(5rem,25vw,16rem)]"
+            className="absolute bottom-[-9vw] xl:bottom-[-5.8vw] 2xl:bottom-[-4vw] left-[-2.6vw] lg:left-[-2.2vw] xl:left-[-1.5vw] 2xl:left-[-0.8vw]  font-semibold leading-[1.3]  text-white dark:text-black [text-shadow:0_0_1px_gray,0_0_1px_gray,0_0_1px_gray,0_0_1px_gray]
+           text-[clamp(5rem,25vw,16rem)] xl:text-[clamp(5rem,25vw,16rem)]"
           >
             NEXTBIT
           </p>
         </div>
       </div>
-      <div className=" mt-2 flex justify-between w-full p-5 border-t-1 border-default-200">
+      <div className="mt-2 flex justify-between items-center w-full py-5 px-4 border-t-1 border-default-200">
         <div className="">
           <p className="text-small text-default-400">
-            &copy; 2025 Nextbit Technologies. All rights reserved.
+            &copy; 2025 Nextbit Technologies. 
           </p>
         </div>
-        <div className="flex space-x-6">
+        <div className="flex space-x-4 md:space-x-6">
           {social.map((item) => (
             <Link key={item.name} isExternal className="text-default-400" href={item.href}>
               <span className="sr-only">{item.name}</span>
-              <item.icon aria-hidden="true" className="w-4" />
+              <item.icon aria-hidden="true" className="w-3 md:w-4" />
             </Link>
           ))}
         </div>
