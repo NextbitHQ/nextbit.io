@@ -12,7 +12,7 @@ export default function GetInTouch() {
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
           <PrimaryButton>Get Started</PrimaryButton>
-          <SecondaryButton>Learn more</SecondaryButton>
+          <SecondaryButton className="w-[168px] md:w-[183px] px-[16px] py-[10px] h-10">Learn more</SecondaryButton>
         </div>
       </div>
     </div>

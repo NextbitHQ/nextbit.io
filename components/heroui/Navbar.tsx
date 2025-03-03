@@ -46,9 +46,8 @@ export default function Component(props: NavbarProps) {
     <Navbar
       {...props}
       classNames={{
-        base: cn("border-default-100 bg-white dark:bg-black", {
+        base: cn("border-default-100 bg-white dark:bg-black border-b border-default-200", {
           "bg-default-200/50 dark:bg-default-100/50 ": isMenuOpen,
-          "border-b border-default-200": scrolled,
         }),
         wrapper: "w-full justify-center",
         item: "hidden md:flex",
@@ -62,7 +61,7 @@ export default function Component(props: NavbarProps) {
         <Link
           className="text-secondary dark:text-white text-lg font-medium"
           href="/"
-        >
+          onClick={() => setIsMenuOpen(false)}>
           <BrandIcon />
         </Link>
       </NavbarBrand>
@@ -95,8 +94,8 @@ export default function Component(props: NavbarProps) {
             {index < menuItems.length - 1 && <Divider className="opacity-50" />}
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem>
-          <ThemeSwitch />
+        <NavbarMenuItem onClick={() => setIsMenuOpen(false)}>
+          <ThemeSwitch  />
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>

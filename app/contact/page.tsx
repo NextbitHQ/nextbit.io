@@ -7,6 +7,7 @@ import {
 import GetInTouch from "@/components/about/get-In-touch";
 import { PrimaryButton } from "@/components/shared/parimary-button";
 import { Metadata } from "next";
+import { SecondaryButton } from "@/components/shared/secondary-button";
 export const metadata: Metadata = {
   title: 'Contact',
   description: 'This is the contact page',
@@ -94,7 +95,7 @@ export default function Contact() {
                 <div className="mt-2.5">
                   <input
                     autoComplete="given-name"
-                    className="block w-full rounded-md  border border-gray-600 px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-indigo-600"
+                    className="block w-full rounded-md  border border-gray-900 px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                     id="first-name"
                     name="first-name"
                     type="text"
@@ -111,7 +112,7 @@ export default function Contact() {
                 <div className="mt-2.5">
                   <input
                     autoComplete="family-name"
-                    className="block w-full border border-gray-600 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-indigo-600"
+                    className="block w-full border  border-gray-900 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                     id="last-name"
                     name="last-name"
                     type="text"
@@ -128,7 +129,7 @@ export default function Contact() {
                 <div className="mt-2.5">
                   <input
                     autoComplete="email"
-                    className="block w-full border border-gray-600 rounded-md px-3.5 py-2 text-base text-secondary-light dark:text-primary-light placeholder:text-gray-400 focus:outline-indigo-600"
+                    className="block w-full border border-gray-900 rounded-md px-3.5 py-2 text-base text-secondary-light dark:text-primary-light placeholder:text-gray-400 focus:outline-none"
                     id="email"
                     name="email"
                     type="email"
@@ -145,7 +146,7 @@ export default function Contact() {
                 <div className="mt-2.5">
                   <input
                     autoComplete="tel"
-                    className="block w-full  border border-gray-600 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-indigo-600"
+                    className="block w-full  border border-gray-900 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                     id="phone-number"
                     name="phone-number"
                     type="tel"
@@ -161,7 +162,7 @@ export default function Contact() {
                 </label>
                 <div className="mt-2.5">
                   <textarea
-                    className="block w-full  border border-gray-600 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-indigo-600"
+                    className="block w-full  border border-gray-900 rounded-md px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                     defaultValue={""}
                     id="message"
                     name="message"
@@ -170,9 +171,8 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div className="mt-8 flex justify-end">
-              {/* <TertiaryButton showIcon={false}>Send Message</TertiaryButton> */}
-              <PrimaryButton>Send Message</PrimaryButton>
+            <div className="mt-8 flex justify-start">
+              <SecondaryButton showIcon={false} className="text-sm px-2 h-8 text-primary-light" >Send Message</SecondaryButton>
             </div>
           </div>
         </form>
