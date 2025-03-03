@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <div className="relative flex w-full flex-col overflow-hidden bg-background">
       <main
-        className={`container mx-auto mt-6 md:py-[120px] flex flex-col md:flex-row gap-x-5 justify-between items-center
+        className={`container mx-auto mt-6 md:pt-[80px] md:pb-[120px]  flex flex-col md:flex-row gap-x-5 justify-between items-center
         `}
         style={{
           backgroundImage: isDark ? `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`: "",
@@ -48,7 +48,6 @@ export default function Hero() {
             variant="bordered"
           >
             The finest digital studio you can rely on
-            <Icon height={20} icon={"solar:arrow-right-linear"} width={20} />
           </Button>
           <LazyMotion features={domAnimation}>
             <m.div
