@@ -64,7 +64,6 @@ const Footer = () => {
 
   return (
     <footer>
-    
       <div className="relative ">
         <div className="relative overflow-hidden h-[125px] md:h-[250px]">
           <p
@@ -78,12 +77,17 @@ const Footer = () => {
       <div className="mt-2 flex justify-between items-center w-full py-5 px-4 border-t-1 border-default-200">
         <div className="">
           <p className="text-small text-default-400">
-            &copy; 2025 Nextbit Technologies. 
+            &copy; 2025 Nextbit Technologies.
           </p>
         </div>
         <div className="flex space-x-4 md:space-x-6">
           {social.map((item) => (
-            <Link key={item.name} isExternal className="text-default-400" href={item.href}>
+            <Link
+              key={item.name}
+              isExternal
+              className="text-default-400"
+              href={item.href}
+            >
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="w-3 md:w-4" />
             </Link>

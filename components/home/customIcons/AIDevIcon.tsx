@@ -1,13 +1,15 @@
-'use client';
+"use client";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
 const AIDevIcon = () => {
   const { resolvedTheme } = useTheme();
-  const [color, setColor] = useState('black');
+  const [color, setColor] = useState("black");
+
   useEffect(() => {
     setColor(resolvedTheme === "dark" ? "white" : "black");
   }, [resolvedTheme]);
+
   return (
     <svg
       fill="none"
