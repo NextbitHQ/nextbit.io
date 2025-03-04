@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/heroui/Navbar";
 import { siteConfig } from "@/config/site";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const GeistFont = Geist({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
+      <GoogleTagManager gtmId="G-FEDEM01J1B" />
 
       <body
         className={clsx(
