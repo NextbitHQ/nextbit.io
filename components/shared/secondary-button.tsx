@@ -1,7 +1,8 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
+
+import { cn } from "@/lib/utils";
 
 interface SecondaryButtonProps {
   onClick?: () => void;
@@ -16,12 +17,12 @@ export function SecondaryButton({
   showIcon = true,
   className = "",
 }: SecondaryButtonProps) {
-  // {`h-10 border-1 border-default-500 text-base font-medium font-primary leading-5 ${className}`}
   return (
     <Button
       className={cn(
         " border-1 border-default-500 text-base font-medium font-primary leading-5",
-        className)}
+        className,
+      )}
       endContent={
         showIcon ? (
           <span className="pointer-events-none flex h-[22px] w-[22px] items-center justify-center rounded-full bg-default-100">

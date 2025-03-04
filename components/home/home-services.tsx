@@ -1,6 +1,10 @@
 "use client";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+
+import ScrollableSection from "./scrollable-service-section";
+
 import service1dark from "@/asset/images/home/services/1.png";
 import service1White from "@/asset/images/home/services/w-1.png";
 import service2dark from "@/asset/images/home/services/2.png";
@@ -16,17 +20,16 @@ import service6White from "@/asset/images/home/services/w-6.png";
 import AIDevIcon from "@/components/home/customIcons/AIDevIcon";
 import { cn } from "@/lib/utils";
 import { PrimaryButton } from "@/components/shared/parimary-button";
-import { useTheme } from "next-themes";
-import ScrollableSection from "./scrollable-service-section";
 
 export default function HomeServices() {
-  const {theme,systemTheme}=useTheme();
-    const [isMounted, setIsMounted] = useState(false);
-    useEffect(() => {
-      setIsMounted(true); 
-    }, []);
-  
-    if (!isMounted) return null; 
+  const { theme, systemTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
   const services = [
     {
       category: "AI Development & Integration",
@@ -51,7 +54,7 @@ export default function HomeServices() {
           description: "Custom AI built on what you do best",
         },
       ],
-      component: theme === 'dark'? service1dark:service1White,
+      component: theme === "dark" ? service1dark : service1White,
     },
     {
       category: "Software Development",
@@ -77,7 +80,7 @@ export default function HomeServices() {
             "We don't do cookie-cutter solutions—only what fits your needs",
         },
       ],
-      component:theme === 'dark'? service2dark:service2White,
+      component: theme === "dark" ? service2dark : service2White,
     },
     {
       category: "Web Development",
@@ -102,7 +105,7 @@ export default function HomeServices() {
           description: "Websites that evolve with your business",
         },
       ],
-      component: theme === 'dark'? service3dark:service3White,
+      component: theme === "dark" ? service3dark : service3White,
     },
     {
       category: "eCommerce Development",
@@ -127,7 +130,7 @@ export default function HomeServices() {
           description: "Your store is ready for high traffic and big sales",
         },
       ],
-      component: theme === 'dark'? service4dark:service4White,
+      component: theme === "dark" ? service4dark : service4White,
     },
     {
       category: "Mobile App Development",
@@ -152,7 +155,7 @@ export default function HomeServices() {
           description: "Apps that grow with your business",
         },
       ],
-      component: theme === 'dark'? service5dark:service5White,
+      component: theme === "dark" ? service5dark : service5White,
     },
     {
       category: "Product Design",
@@ -177,12 +180,12 @@ export default function HomeServices() {
           description: "More clicks, more sales, more success",
         },
       ],
-      component: theme === 'dark'? service6dark:service6White,
+      component: theme === "dark" ? service6dark : service6White,
     },
   ];
 
   return (
-    <div className="py-14 mt-40" >
+    <div className="py-14 mt-40">
       <div>
         <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
           First-Class
@@ -198,12 +201,14 @@ export default function HomeServices() {
         </p>
       </div>
       <div className="hidden md:block py-28">
-      <ScrollableSection services={services} />
+        <ScrollableSection services={services} />
       </div>
       <div className="block md:hidden px-2 py-20">
         {services.map((service, index) => (
-
-          <div key={index} className="flex flex-col md:flex-row items-center justify-between">
+          <div
+            key={index}
+            className="flex flex-col md:flex-row items-center justify-between"
+          >
             <div className="w-full">
               <div
                 className={[
@@ -246,19 +251,21 @@ export default function HomeServices() {
                 </ul>
               </div>
               <div>
-                <PrimaryButton className="my-6">
-                  {service.button}
-                </PrimaryButton>
+                <PrimaryButton className="my-6">{service.button}</PrimaryButton>
               </div>
             </div>
             <div className="w-full mt-16">
-              <Image className="object-contain h-full w-full" width={400} height={500} src={service.component} alt={service.category} />
+              <Image
+                alt={service.category}
+                className="object-contain h-full w-full"
+                height={500}
+                src={service.component}
+                width={400}
+              />
             </div>
-
           </div>
         ))}
       </div>
-
     </div>
   );
 }

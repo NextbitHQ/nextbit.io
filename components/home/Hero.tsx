@@ -4,25 +4,27 @@ import { Icon } from "@iconify/react";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 import { Button } from "@heroui/react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 
 import { PrimaryButton } from "../shared/parimary-button";
 import { SecondaryButton } from "../shared/secondary-button";
 
 import bg_grid from "@/asset/images/home/bg_grid.png";
 import brandDarkImage from "@/asset/images/home/brand_icon_img.png";
-import { useTheme } from "next-themes";
-import Link from "next/link";
 
 export default function Hero() {
   const { theme, systemTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
-    setIsMounted(true); 
+    setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null; 
+  if (!isMounted) return null;
 
-  const isDark = theme === "dark" || (theme === "system" && systemTheme === "dark");
+  const isDark =
+    theme === "dark" || (theme === "system" && systemTheme === "dark");
 
   return (
     <div className="relative flex w-full flex-col overflow-hidden bg-background">
@@ -30,7 +32,9 @@ export default function Hero() {
         className={`container mx-auto mt-6 md:pt-[80px] md:pb-[120px]  flex flex-col md:flex-row gap-x-5 justify-between items-center
         `}
         style={{
-          backgroundImage: isDark ? `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`: "",
+          backgroundImage: isDark
+            ? `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`
+            : "",
           backgroundSize: "288%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "-23% 49%",
@@ -80,9 +84,9 @@ export default function Hero() {
                 </m.div>
                 <m.div
                   key="description"
-                  animate={{opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   className="text-start font-normal text-secondary-light dark:text-primary-light text-sm md:text-lg font-secondary leading-[1.36] tracking-[-0.02em]"
-                  initial={{opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 30 }}
                   transition={{
                     duration: 0.8,
                     delay: 0.3,
@@ -90,7 +94,10 @@ export default function Hero() {
                     bounce: 0.3,
                   }}
                 >
-                 We&apos;re an engineering studio building cutting-edge digital products and solutions. We partner with disruptive companies and innovative entrepreneurs to fulfill their strategy, design, & development needs.
+                  We&apos;re an engineering studio building cutting-edge digital
+                  products and solutions. We partner with disruptive companies
+                  and innovative entrepreneurs to fulfill their strategy,
+                  design, & development needs.
                 </m.div>
 
                 <m.div
@@ -105,10 +112,19 @@ export default function Hero() {
                     bounce: 0.3,
                   }}
                 >
-                   {[
-                    { icon: "solar:users-group-rounded-broken", text: "On-demand senior developers and designers" },
-                    { icon: "solar:pause-broken", text: "Pause or cancel anytime" },
-                    { icon: "solar:clock-circle-broken", text: "Fast iteration cycles" },
+                  {[
+                    {
+                      icon: "solar:users-group-rounded-broken",
+                      text: "On-demand senior developers and designers",
+                    },
+                    {
+                      icon: "solar:pause-broken",
+                      text: "Pause or cancel anytime",
+                    },
+                    {
+                      icon: "solar:clock-circle-broken",
+                      text: "Fast iteration cycles",
+                    },
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-x-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-md border border-[#292929]">
@@ -126,9 +142,9 @@ export default function Hero() {
 
                 <m.div
                   key="buttons"
-                  animate={{opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   className="flex flex-row gap-x-5 md:gap-x-6 items-center mt-2"
-                  initial={{opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 30 }}
                   transition={{
                     duration: 0.8,
                     delay: 0.5,
@@ -137,7 +153,10 @@ export default function Hero() {
                   }}
                 >
                   <PrimaryButton>Book a free call</PrimaryButton>
-                  <SecondaryButton className="w-[168px] md:w-[183px] px-[16px] py-[10px] h-10"> <Link href="/contact">Email us</Link></SecondaryButton>
+                  <SecondaryButton className="w-[168px] md:w-[183px] px-[16px] py-[10px] h-10">
+                    {" "}
+                    <Link href="/contact">Email us</Link>
+                  </SecondaryButton>
                 </m.div>
               </AnimatePresence>
             </m.div>

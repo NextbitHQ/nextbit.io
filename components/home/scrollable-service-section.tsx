@@ -1,8 +1,9 @@
-'use client';
-import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { PrimaryButton } from '../shared/parimary-button';
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+import { PrimaryButton } from "../shared/parimary-button";
 
 export interface Service {
   icon: React.ReactNode;
@@ -30,17 +31,18 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
       if (!leftSideRef.current) return;
 
       const { scrollTop, clientHeight } = leftSideRef.current;
-      const scrollMid = scrollTop + (clientHeight / 2);
+      const scrollMid = scrollTop + clientHeight / 2;
 
       // Find which section is most visible
       let newActiveIndex = 0;
+
       serviceRefs.current.forEach((ref, index) => {
         if (!ref) return;
-        
+
         const rect = ref.getBoundingClientRect();
         const parentRect = leftSideRef.current!.getBoundingClientRect();
         const relativeTop = rect.top - parentRect.top;
-        
+
         if (relativeTop <= clientHeight / 2) {
           newActiveIndex = index;
         }
@@ -55,12 +57,12 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
       requestAnimationFrame(updateActiveIndex);
     };
 
-    const handleWheel = (e: { deltaY: number; preventDefault: () => void; }) => {
+    const handleWheel = (e: { deltaY: number; preventDefault: () => void }) => {
       if (leftSideRef.current) {
         const { scrollTop, scrollHeight, clientHeight } = leftSideRef.current;
         const isAtTop = scrollTop <= 0;
         const isAtBottom = scrollHeight - scrollTop - clientHeight < 2;
-  
+
         if ((isAtTop && e.deltaY < 0) || (isAtBottom && e.deltaY > 0)) {
           return;
         }
@@ -77,14 +79,14 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
     const leftSide = leftSideRef.current;
 
     if (container && leftSide) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-      leftSide.addEventListener('scroll', handleScroll);
+      container.addEventListener("wheel", handleWheel, { passive: false });
+      leftSide.addEventListener("scroll", handleScroll);
     }
 
     return () => {
       if (container && leftSide) {
-        container.removeEventListener('wheel', handleWheel);
-        leftSide.removeEventListener('scroll', handleScroll);
+        container.removeEventListener("wheel", handleWheel);
+        leftSide.removeEventListener("scroll", handleScroll);
       }
     };
   }, [activeIndex, services.length]);
@@ -103,7 +105,7 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            ref={el => {
+            ref={(el) => {
               serviceRefs.current[index] = el;
             }}
             className={index !== 0 ? "my-20" : ""}
@@ -144,9 +146,7 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
               </ul>
             </div>
             <div>
-              <PrimaryButton className="my-6">
-                {service.button}
-              </PrimaryButton>
+              <PrimaryButton className="my-6">{service.button}</PrimaryButton>
             </div>
           </motion.div>
         ))}
@@ -155,18 +155,18 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ services }) => {
       {/* Right Side - Fixed Image */}
       <div className="md:w-2/5 md:h-[780px] pointer-events-none flex items-center justify-center">
         <motion.div
-          className="w-full flex items-center"
           key={activeIndex}
-          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
+          className="w-full flex items-center"
+          initial={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 2 }}
         >
           <Image
+            alt={services[activeIndex].category}
             className="object-contain h-full w-full"
-            width={400}
             height={500}
             src={services[activeIndex].component}
-            alt={services[activeIndex].category}
+            width={400}
           />
         </motion.div>
       </div>

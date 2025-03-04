@@ -3,14 +3,13 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-
-import GetInTouch from "@/components/about/get-In-touch";
-import { PrimaryButton } from "@/components/shared/parimary-button";
 import { Metadata } from "next";
+
 import { SecondaryButton } from "@/components/shared/secondary-button";
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Have questions or need assistance? Reach out to the Nextbit team today! We’re here to help with all your eCommerce software and business needs.',
+  title: "Contact",
+  description:
+    "Have questions or need assistance? Reach out to the Nextbit team today! We’re here to help with all your eCommerce software and business needs.",
 };
 export default function Contact() {
   return (
@@ -23,8 +22,8 @@ export default function Contact() {
               Let&apos;s Build Something Great Together.
             </h2>
             <p className="mt-6 text-lg/8 text-secondary-light dark:text-primary-light">
-              Have questions or ready to get started? Reach out to us, we&apos;re
-              here to help!
+              Have questions or ready to get started? Reach out to us,
+              we&apos;re here to help!
             </p>
             <dl className="mt-10 space-y-4 text-base/7 text-secondary-light dark:text-primary-light">
               <div className="flex gap-x-4">
@@ -172,7 +171,12 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-start">
-              <SecondaryButton showIcon={false} className="text-sm px-2 h-8 text-secondary-light dark:text-primary-light" >Send Message</SecondaryButton>
+              <SecondaryButton
+                className="text-sm px-2 h-8 text-secondary-light dark:text-primary-light"
+                showIcon={false}
+              >
+                Send Message
+              </SecondaryButton>
             </div>
           </div>
         </form>

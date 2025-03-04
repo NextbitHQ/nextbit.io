@@ -1,8 +1,9 @@
+import { Metadata } from "next";
+
 import GetInTouch from "@/components/about/get-In-touch";
 import ProcessRepeatableSection from "@/components/process/process-repeatable-section";
 import CompanyBenefit from "@/components/process/company-benefit";
 import ProcessHeader from "@/components/process/process-header";
-import { Metadata } from 'next';
 
 const data = [
   {
@@ -96,9 +97,11 @@ const data = [
     ],
   },
 ];
+
 export const metadata: Metadata = {
-  title: 'Process',
-  description: 'Discover Nextbit proven process for building and scaling your online business. From planning to execution, we ensure every step is aligned with your goals.',
+  title: "Process",
+  description:
+    "Discover Nextbit proven process for building and scaling your online business. From planning to execution, we ensure every step is aligned with your goals.",
 };
 export default function Process() {
   return (

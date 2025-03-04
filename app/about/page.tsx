@@ -1,12 +1,14 @@
+import { Metadata } from "next";
+
 import AboutUs from "@/components/about/about-us";
 import GetInTouch from "@/components/about/get-In-touch";
 import AboutRepeatableSection from "@/components/about/about-repeatable-section";
 import ourStoryImage from "@/asset/images/about/our-story.png";
 import team from "@/asset/images/about/team.png";
-import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'Learn about Nextbit mission to redefine the eCommerce and SaaS landscape. We are committed to solving problems, empowering businesses, and driving growth.',
+  title: "About",
+  description:
+    "Learn about Nextbit mission to redefine the eCommerce and SaaS landscape. We are committed to solving problems, empowering businesses, and driving growth.",
 };
 export default function About() {
   return (
