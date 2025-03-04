@@ -172,12 +172,11 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-start">
-              <SecondaryButton showIcon={false} className="text-sm px-2 h-8 text-primary-light" >Send Message</SecondaryButton>
+              <SecondaryButton showIcon={false} className="text-sm px-2 h-8 text-secondary-light dark:text-primary-light" >Send Message</SecondaryButton>
             </div>
           </div>
         </form>
       </div>
-      <GetInTouch />
     </div>
   );
 }

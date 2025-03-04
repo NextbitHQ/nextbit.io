@@ -11,6 +11,7 @@ import { SecondaryButton } from "../shared/secondary-button";
 import bg_grid from "@/asset/images/home/bg_grid.png";
 import brandDarkImage from "@/asset/images/home/brand_icon_img.png";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export default function Hero() {
   const { theme, systemTheme } = useTheme();
@@ -135,8 +136,8 @@ export default function Hero() {
                     bounce: 0.3,
                   }}
                 >
-                  <PrimaryButton>Get Started</PrimaryButton>
-                  <SecondaryButton> See our plans</SecondaryButton>
+                  <PrimaryButton>Book a free call</PrimaryButton>
+                  <SecondaryButton className="w-[168px] md:w-[183px] px-[16px] py-[10px] h-10"> <Link href="/contact">Email us</Link></SecondaryButton>
                 </m.div>
               </AnimatePresence>
             </m.div>
