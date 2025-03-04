@@ -1,4 +1,4 @@
-import { LuSmile,LuFrown } from "react-icons/lu";
+import { LuSmile, LuFrown } from "react-icons/lu";
 const nextbitSulution = [
   "Start with a validated MVP before full development",
   "Go to market 3x faster (within months, not years)",

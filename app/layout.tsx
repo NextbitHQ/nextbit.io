@@ -1,12 +1,14 @@
 import "@/styles/globals.css";
-import {Metadata, Viewport } from "next";
+import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { Geist, Inter } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
+
 import { Providers } from "./providers";
+
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/heroui/Navbar";
 import { siteConfig } from "@/config/site";
-import { GoogleTagManager } from '@next/third-parties/google'
 
 const GeistFont = Geist({
   subsets: ["latin"],
@@ -22,9 +24,10 @@ const InterFont = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+
 export const metadata: Metadata = {
   title: {
-    template:`%s | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
     default: siteConfig.name,
   },
   description: siteConfig.description,
@@ -32,8 +35,6 @@ export const metadata: Metadata = {
     icon: "/Favicon.svg",
   },
 };
-
-
 
 export const viewport: Viewport = {
   themeColor: [
