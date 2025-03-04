@@ -29,7 +29,6 @@ const menuItems = [
 export default function Component(props: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
@@ -80,9 +79,15 @@ export default function Component(props: NavbarProps) {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenuToggle className="text-default-400 md:hidden" />
-      <NavbarMenu className="top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50">
+      <NavbarMenu  
+       
+      className={cn(
+        "top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50 transition-all duration-300 ease-in-out",
+        { "opacity-0 translate-y-[-10px]": !isMenuOpen, "opacity-1 translate-y-[-10px]": isMenuOpen }
+      )}
+      >
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item}-${index}`} >
             <Link
               className="mb-2 w-full text-default-500"
               href={item.link}
