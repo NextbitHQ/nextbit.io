@@ -448,7 +448,6 @@ export async function revalidateWordPressData(tags: string[] = ["wordpress"]) {
       revalidateTag(tag);
     });
   } catch (error) {
-    console.error("Failed to revalidate WordPress data:", error);
     throw new Error("Failed to revalidate WordPress data");
   }
 }
