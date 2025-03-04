@@ -7,7 +7,7 @@ import Industry from "@/components/home/Industry";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'This is the about page',
+  description: 'Discover Nextbit innovative eCommerce software and business solutions designed to simplify your online store experience',
 };
 export default function Home() {
 
