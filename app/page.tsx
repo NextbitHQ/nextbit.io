@@ -2,10 +2,11 @@ import { Metadata } from "next";
 
 import GetInTouch from "@/components/about/get-In-touch";
 import Compare from "@/components/home/Compare";
-import CoreFeature from "@/components/home/core-feature";
 import Hero from "@/components/home/Hero";
-import HomeServices from "@/components/home/home-services";
+import ServicesList from "@/components/home/ServicesList";
 import Industry from "@/components/home/Industry";
+import CoreFeature from "@/components/home/core-feature";
+import HomeServices from "@/components/home/home-services";
 export const metadata: Metadata = {
   title: "Home",
   description:
@@ -16,7 +17,8 @@ export default function Home() {
     <section>
       <Hero />
       <CoreFeature />
-      <HomeServices />
+      <ServicesList />
+      {/* <HomeServices /> */}
       <Industry />
       <Compare />
       <GetInTouch />
