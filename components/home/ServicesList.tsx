@@ -36,8 +36,39 @@ export default function ServicesList() {
   }, []);
 
 
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const images = gsap.utils.toArray('.left-content .img_card') as HTMLElement[];
+    const rightElements = gsap.utils.toArray('.right-content .right-element');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.container_serviceScroll',
+        start: 'top top',
+        end: '+=800%',
+        pin: true,
+        // scrub: true,
+        scrub: 1,
+        markers: true,
+      },
+    });
+
+    images.forEach((img, i) => {
+      if (images[i + 1]) {
+        tl.to(img, { opacity: 0, duration: 0.001 })
+          .to(images[i + 1], { opacity: 1, duration: 0.001,  }, '<')
+          .to(rightElements, { yPercent: -(100 * (i + 1)), ease: 'none',delay:0.2 }, '<');
+      }
+    });
 
 
+    // tl.to({}, {}, '+=0.5');
+  }, [isMounted]);
+
+
+
+/*
   useEffect(() => {
     if (!isMounted) return;
 
@@ -50,9 +81,9 @@ export default function ServicesList() {
         start: 'top top',
         end: '+=200%',
         pin: true,
-        scrub: true,
-        // scrub: 0.003,
-        markers: false,
+        // scrub: true,
+        scrub: 1,
+        markers: true,
       },
     });
 
@@ -66,6 +97,7 @@ export default function ServicesList() {
 
     tl.to({}, {}, '+=0.5');
   }, [isMounted]);
+*/
 
   if (!isMounted) return null;
 
@@ -95,6 +127,7 @@ export default function ServicesList() {
       ],
       component: theme === "dark" ? service1dark : service1White,
     },
+
     {
       category: "Software Development",
       heading: "From Concept to Execution, Fast & Efficient.",
@@ -121,6 +154,7 @@ export default function ServicesList() {
       ],
       component: theme === "dark" ? service2dark : service2White,
     },
+
     {
       category: "Web Development",
       heading: "Websites That Work, Not Just Look Good",
@@ -221,6 +255,7 @@ export default function ServicesList() {
       ],
       component: theme === "dark" ? service6dark : service6White,
     },
+
   ];
 
   return (
@@ -253,10 +288,12 @@ export default function ServicesList() {
         <div className='left-container w-1/2 h-screen overflow-hidden relative flex justify-center items-center'>
           <div className='left-content w-full min-w-[400px] h-full max-h-[400px] relative overflow-hidden'>
             {
-                services.map((el,idx)=><div className={['img_card absolute top-0 left-0 right-0 object-cover w-full h-full opacity-0',cn({
-                  ['opacity-100']: idx === 0,
+                services.map((el,idx)=><div className={['img_card absolute top-0 left-0 right-0 object-cover w-full h-full',cn({
+                  ['opacity-100']: idx === 1,
                   ['opacity-0']: idx !== 0,
-                })].join(" ")} key={idx}>
+                  // ['visibility-visible']: idx === 0,
+                  // ['visibility-hidden']: idx !== 0,
+                })].join(" ")} key={idx}> 
                   <Image
                     src={el.component}
                     alt={'Image 1'+idx}
