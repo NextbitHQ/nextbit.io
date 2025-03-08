@@ -239,8 +239,8 @@ export default function ServicesList() {
           modular architecture, and user-friendly tools.
         </p>
       </div>
-      <div className='container_serviceScroll w-full  h-screen overflow-hidden flex'>
 
+      <section className='container_serviceScroll hidden md:flex w-full  h-screen overflow-hidden'>
         <div className='right-container w-1/2 h-screen overflow-hidden relative'>
           <div className='right-content w-full relative'>
             {
@@ -268,34 +268,26 @@ export default function ServicesList() {
             }
           </div>
         </div>
+      </section>
 
-      </div>
-      {/* <div className='container_serviceScroll'>
-        <div className='left-container'>
-          <div className='left-content'>
+      <section className='block md:hidden '>
             {
-                services.map((el,idx)=><div className='img_card' key={idx}>
-                  <Image
-                    src={el.component}
-                    alt={'Image 1'+idx}
-                    width={400}
-                    height={400}
-
-                  />
-                </div>)
-            }
-          </div>
-        </div>
-        <div className='right-container'>
-          <div className='right-content'>
-            {
-                services.map((item,idx)=><div className='right-element' key={idx}>
+              services.map((item,idx)=><div key={idx}>
                 <ServiceCard service={item} />
-            </div>)
+                <div className='mb-20'>
+                  <Image
+                      className='block mx-auto'
+                      src={item.component}
+                      alt={'Image 1'+idx}
+                      width={400}
+                      height={400}
+                    />
+                </div>
+              </div>)
             }
-          </div>
-        </div>
-      </div> */}
+
+      </section>
+
     </div>
   );
 }
