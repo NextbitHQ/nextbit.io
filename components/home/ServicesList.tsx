@@ -35,7 +35,7 @@ export default function ServicesList() {
     setIsMounted(true);
   }, []);
 
-
+/*
   useEffect(() => {
     if (!isMounted) return;
 
@@ -58,17 +58,17 @@ export default function ServicesList() {
       if (images[i + 1]) {
         tl.to(img, { opacity: 0, duration: 0.001 })
           .to(images[i + 1], { opacity: 1, duration: 0.001,  }, '<')
-          .to(rightElements, { yPercent: -(100 * (i + 1)), ease: 'none',delay:0.2 }, '<');
+          .to(rightElements, { yPercent: -(100 * (i + 1)), ease: 'none' }, '<');
       }
     });
 
 
     // tl.to({}, {}, '+=0.5');
   }, [isMounted]);
+*/
 
 
 
-/*
   useEffect(() => {
     if (!isMounted) return;
 
@@ -83,7 +83,7 @@ export default function ServicesList() {
         pin: true,
         // scrub: true,
         scrub: 1,
-        markers: true,
+        markers: false,
       },
     });
 
@@ -97,7 +97,7 @@ export default function ServicesList() {
 
     tl.to({}, {}, '+=0.5');
   }, [isMounted]);
-*/
+
 
   if (!isMounted) return null;
 
@@ -289,11 +289,11 @@ export default function ServicesList() {
           <div className='left-content w-full min-w-[400px] h-full max-h-[400px] relative overflow-hidden'>
             {
                 services.map((el,idx)=><div className={['img_card absolute top-0 left-0 right-0 object-cover w-full h-full',cn({
-                  ['opacity-100']: idx === 1,
+                  ['opacity-100']: idx === 0,
                   ['opacity-0']: idx !== 0,
                   // ['visibility-visible']: idx === 0,
                   // ['visibility-hidden']: idx !== 0,
-                })].join(" ")} key={idx}> 
+                })].join(" ")} key={idx}>
                   <Image
                     src={el.component}
                     alt={'Image 1'+idx}
