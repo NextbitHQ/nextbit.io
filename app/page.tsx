@@ -7,9 +7,9 @@ import Hero from "@/components/home/Hero";
 import HomeServices from "@/components/home/home-services";
 import Industry from "@/components/home/Industry";
 export const metadata: Metadata = {
-  title: "Home",
+  title: 'Home | Nextbit Studio',
   description:
-    "Discover Nextbit innovative eCommerce software and business solutions designed to simplify your online store experience",
+    "Discover Nextbit Studio's innovative eCommerce software and business solutions designed to simplify your online store experience. Join the future of eCommerce today",
 };
 export default function Home() {
   return (
