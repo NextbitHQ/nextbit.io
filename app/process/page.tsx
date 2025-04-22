@@ -101,7 +101,7 @@ const data = [
 export const metadata: Metadata = {
   title: "Process",
   description:
-    "Discover Nextbit proven process for building and scaling your online business. From planning to execution, we ensure every step is aligned with your goals.",
+    'Discover Nextbit Studio is proven process for building and scaling your eCommerce business. From planning to execution, we ensure every step is aligned with your goals',
 };
 export default function Process() {
   return (

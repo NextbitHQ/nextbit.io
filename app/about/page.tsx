@@ -8,7 +8,7 @@ import team from "@/asset/images/about/team.png";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Nextbit mission to redefine the eCommerce and SaaS landscape. We are committed to solving problems, empowering businesses, and driving growth.",
+   'Learn about Nextbit Studio is mission to redefine the eCommerce and SaaS landscape. We are committed to solving problems, empowering businesses, and driving growth',
 };
 export default function About() {
   return (

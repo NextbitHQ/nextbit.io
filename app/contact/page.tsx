@@ -7,9 +7,9 @@ import { Metadata } from "next";
 
 import { SecondaryButton } from "@/components/shared/secondary-button";
 export const metadata: Metadata = {
-  title: "Contact",
+  title: 'Contact',
   description:
-    "Have questions or need assistance? Reach out to the Nextbit team today! We’re here to help with all your eCommerce software and business needs.",
+    'Have questions or need assistance? Reach out to the Nextbit team today.We are here to help with all your eCommerce software and business needs.',
 };
 export default function Contact() {
   return (
