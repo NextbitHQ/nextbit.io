@@ -6,7 +6,6 @@ import Hero from "@/components/home/Hero";
 import ServicesList from "@/components/home/ServicesList";
 import Industry from "@/components/home/Industry";
 import CoreFeature from "@/components/home/core-feature";
-import HomeServices from "@/components/home/home-services";
 export const metadata: Metadata = {
   title: 'Home | Nextbit Studio',
   description:
@@ -18,7 +17,6 @@ export default function Home() {
       <Hero />
       <CoreFeature />
       <ServicesList />
-      {/* <HomeServices /> */}
       <Industry />
       <Compare />
       <GetInTouch />

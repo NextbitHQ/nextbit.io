@@ -67,10 +67,10 @@ export default function RootLayout({
             enableColorScheme: true,
           }}
         >
-          <div className="relative min-h-screen  border border-default-200 max-w-5xl mx-auto">
+          <div className="relative min-h-screen  border border-default-200 max-w-7xl mx-auto">
             <Navbar />
 
-            <main className="px-4">{children}</main>
+            <main className="px-6">{children}</main>
             <Footer />
           </div>
         </Providers>

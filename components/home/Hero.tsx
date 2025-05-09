@@ -29,7 +29,7 @@ export default function Hero() {
   return (
     <div className="relative flex w-full flex-col overflow-hidden bg-background">
       <main
-        className={`container mx-auto mt-6 md:pt-[80px] md:pb-[120px]  flex flex-col md:flex-row gap-x-5 justify-between items-center
+        className={`container mx-auto mt-6 md:pt-[80px] md:pb-[120px]  flex flex-col md:flex-row gap-x-6 justify-between items-center
         `}
         style={{
           backgroundImage: isDark
@@ -39,16 +39,10 @@ export default function Hero() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "-23% 49%",
         }}
-        // style={{
-        //   background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg_grid.src})`,
-        //   backgroundSize: "288%",
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundPosition: "-23% 49%",
-        // }}
       >
         <section className="w-full md:w-3/5 z-20 flex flex-col items-start justify-center gap-[18px] sm:gap-6">
           <Button
-            className="h-10 overflow-hidden border-1 border-default-100 bg-[#F7F7F7] dark:bg-inherit px-[16px] py-[10px] text-sm font-medium leading-5 text-secondary-light dark:text-primary-light"
+            className="h-10 overflow-hidden border-1 border-default-100 dark:bg-inherit px-[16px] py-[10px] text-sm font-medium leading-5 text-secondary-light dark:text-primary-light"
             radius="sm"
             variant="bordered"
           >

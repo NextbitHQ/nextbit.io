@@ -9,12 +9,6 @@ const coreFeatures = [
   },
   {
     icon: <Icon icon={"prime:box"} width={22} />,
-    title: "Enterprise-Grade Security",
-    description:
-      "Stay protected with cutting-edge security protocols, safeguarding your data and transactions against evolving threats",
-  },
-  {
-    icon: <Icon icon={"prime:box"} width={22} />,
     title: "Lightning-Fast ",
     description:
       "Speed matters. Experience ultra-fast load times and smooth interactions for a frictionless user experience.",
@@ -33,7 +27,7 @@ export default function CoreFeature() {
       <h3 className="text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em] font-semibold font-primary">
         Core Features for Maximum Impact
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-5 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-y-8 md:gap-x-8 mt-8">
         {coreFeatures.map((feature, index) => (
           <div key={index}>
             <div className="flex text-secondary dark:text-primary gap-5">
