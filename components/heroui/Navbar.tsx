@@ -16,7 +16,6 @@ import {
 } from "@heroui/react";
 import { cn } from "@heroui/react";
 
-import { ThemeSwitch } from "../theme-switch";
 import BrandIcon from "../icons/BrandIcon";
 
 const menuItems = [
@@ -47,9 +46,9 @@ export default function Component(props: NavbarProps) {
       {...props}
       classNames={{
         base: cn(
-          "border-default-100 bg-white dark:bg-black border-b border-default-200",
+          "dark:bg-black border-b border-default-200",
           {
-            "bg-default-200/50 dark:bg-default-100/50 ": isMenuOpen,
+            "dark:bg-default-100/50 ": isMenuOpen,
           },
         ),
         wrapper: "w-full justify-center",
@@ -62,7 +61,7 @@ export default function Component(props: NavbarProps) {
       {/* Left Content */}
       <NavbarBrand>
         <Link
-          className="text-secondary dark:text-white text-lg font-medium"
+          className=" dark:text-white text-lg font-medium"
           href="/"
           onClick={() => setIsMenuOpen(false)}
         >
@@ -79,9 +78,7 @@ export default function Component(props: NavbarProps) {
             </Link>
           </NavbarItem>
         ))}
-        <NavbarItem>
-          <ThemeSwitch />
-        </NavbarItem>
+
       </NavbarContent>
       <NavbarMenuToggle className="text-default-400 md:hidden" />
       <NavbarMenu
@@ -106,9 +103,7 @@ export default function Component(props: NavbarProps) {
             {index < menuItems.length - 1 && <Divider className="opacity-50" />}
           </NavbarMenuItem>
         ))}
-        <NavbarMenuItem onClick={() => setIsMenuOpen(false)}>
-          <ThemeSwitch />
-        </NavbarMenuItem>
+  
       </NavbarMenu>
     </Navbar>
   );

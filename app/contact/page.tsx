@@ -18,20 +18,20 @@ export default function Contact() {
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:pt-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-gray-900/10 lg:w-1/2" />
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-black dark:text-primary sm:text-[40px]">
+            <h2 className="text-4xl font-semibold tracking-tight text-prettydark:text-primary sm:text-[40px]">
               Let&apos;s Build Something Great Together.
             </h2>
-            <p className="mt-6 text-lg/8 text-secondary-light dark:text-primary-light">
+            <p className="mt-6 text-lg/8 dark:text-primary-light">
               Have questions or ready to get started? Reach out to us,
               we&apos;re here to help!
             </p>
-            <dl className="mt-10 space-y-4 text-base/7 text-secondary-light dark:text-primary-light">
+            <dl className="mt-10 space-y-4 text-base/7 dark:text-primary-light">
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Address</span>
                   <BuildingOffice2Icon
                     aria-hidden="true"
-                    className="h-7 w-6 text-secondary-light dark:text-primary-light"
+                    className="h-7 w-6 dark:text-primary-light"
                   />
                 </dt>
                 <dd>
@@ -45,12 +45,12 @@ export default function Contact() {
                   <span className="sr-only">Telephone</span>
                   <PhoneIcon
                     aria-hidden="true"
-                    className="h-7 w-6 text-secondary-light dark:text-primary-light"
+                    className="h-7 w-6  dark:text-primary-light"
                   />
                 </dt>
                 <dd>
                   <a
-                    className="text-secondary-light dark:text-primary-light"
+                    className="dark:text-primary-light"
                     href="tel:+1 (689) 309‑5372"
                   >
                     +1 (689) 309‑5372

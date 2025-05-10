@@ -47,10 +47,10 @@ export default function Industry() {
   return (
     <div className="pb-5">
       <div>
-        <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
+        <h2 className="font-primary font-bold  dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
           Unlocking Growth Potential
         </h2>
-        <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">
+        <p className="font-secondary font-normal text-sm md:text-lg dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">
           Seize every opportunity with a strategic approach that drives
           innovation and scalability. Nextbit.io equips you with the tools and
           insights needed to optimize operations, expand market reach, and
@@ -61,7 +61,7 @@ export default function Industry() {
         {industries.map((industry, index) => (
           <div
             key={index}
-            className="flex items-center gap-2 text-secondary font-semibold dark:text-primary"
+            className="flex items-center gap-2 font-semibold dark:text-primary"
           >
             {industry.icon}
             <span>{industry.text}</span>

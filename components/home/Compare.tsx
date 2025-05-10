@@ -55,10 +55,10 @@ export default function Compare() {
     <div className="pt-20 md:pt-32 pb-6 md:pb-10">
       <div>
         <div>
-          <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
+          <h2 className="font-primary font-bold dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
             Turning Opportunities into Maximum Value
           </h2>
-          <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">
+          <p className="font-secondary font-normal text-sm md:text-lg dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">
             We make sure that every resource, choice, and investment contributes
             to long-term success by emphasizing innovation, efficiency, and
             scalability.
@@ -66,8 +66,8 @@ export default function Compare() {
         </div>
 
         <div className="hidden md:flex flex-col md:flex-row gap-6 mt-10">
-          <div className="w-full md:w-[33%] bg-[#FAFAFA] dark:bg-dark-gradient p-4 rounded-md border border-default-200 dark:border-y-default-50 dark:border-x-default-200">
-            <h3 className="text-secondary dark:text-primary text-3xl md:text-[28px] leading-[1.2] tracking-[-0.02em] font-semibold font-primary">
+          <div className="w-full md:w-[33%] dark:bg-dark-gradient p-4 rounded-md border border-default-200 dark:border-y-default-50 dark:border-x-default-200">
+            <h3 className="dark:text-primary text-3xl md:text-[28px] leading-[1.2] tracking-[-0.02em] font-semibold font-primary">
               {" "}
               Nexbit Studio
             </h3>
@@ -75,7 +75,7 @@ export default function Compare() {
               {nextbitSulution.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center text-secondary dark:text-primary gap-x-2 "
+                  className="flex items-center dark:text-primary gap-x-2 "
                 >
                   <LuCheck className="my-3 h-5 w-6 font-semibold" />
                   <span className="text-sm my-3">{item}</span>
@@ -114,7 +114,7 @@ export default function Compare() {
                       {nextbitSulution.map((item, index) => (
                         <li
                           key={index}
-                          className="flex items-center text-secondary dark:text-primary gap-x-2 "
+                          className="flex items-center dark:text-primary gap-x-2 "
                         >
                           <LuCheck className="my-3 h-5 w-6 font-semibold" />
                           <span className="text-sm my-3">{item}</span>
