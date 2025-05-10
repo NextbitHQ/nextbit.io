@@ -261,10 +261,10 @@ export default function ServicesList() {
   return (
     <div className="py-14 mt-40">
       <div>
-        <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
+        <h2 className="font-primary font-bold dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
           First-Class
         </h2>
-        <h2 className="font-primary font-bold text-secondary dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
+        <h2 className="font-primary font-bold dark:text-primary text-4xl md:text-[48px] leading-[1.2] tracking-[-0.02em]">
           Development experience
         </h2>
         <p className="font-secondary font-normal text-sm md:text-lg text-secondary-light dark:text-primary-light mt-3 md:mt-4 leading-[1.2] tracking-[-0.03em]">
@@ -286,7 +286,7 @@ export default function ServicesList() {
           </div>
         </div>
         <div className='left-container w-1/2 h-screen overflow-hidden relative flex justify-center items-center'>
-          <div className='left-content w-full min-w-[400px] h-full max-h-[400px] relative overflow-hidden'>
+          <div className='left-content w-full min-w-[500px] h-full max-h-[500px] relative overflow-hidden'>
             {
                 services.map((el,idx)=><div className={['img_card absolute top-0 left-0 right-0 object-cover w-full h-full',cn({
                   ['opacity-100']: idx === 0,
@@ -297,8 +297,8 @@ export default function ServicesList() {
                   <Image
                     src={el.component}
                     alt={'Image 1'+idx}
-                    width={400}
-                    height={400}
+                    width={500}
+                    height={500}
 
                   />
                 </div>)
