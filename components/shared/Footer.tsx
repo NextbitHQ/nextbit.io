@@ -67,8 +67,8 @@ const Footer = () => {
       <div className="relative ">
         <div className="relative overflow-hidden h-[125px] md:h-[250px]">
           <p
-            className="absolute bottom-[-9vw] xl:bottom-[-5.8vw] 2xl:bottom-[-4vw] left-[-2.6vw] lg:left-[-2.2vw] xl:left-[-1.6vw] font-semibold leading-[1.3] dark:text-black [text-shadow:0_0_1px_gray,0_0_1px_gray,0_0_1px_gray,0_0_1px_gray]
-           text-[clamp(5rem,25vw,16rem)] lg:text-[clamp(5rem,25vw,16rem)] xl:text-[clamp(5rem,25vw,20rem)] 2xl:text-[clamp(8rem,20vw,20rem)]"
+            className="absolute bottom-[-9vw] xl:bottom-[-5.8vw] left-[-2.6vw] lg:left-[-2.2vw] xl:left-[-1.3vw] font-semibold leading-[1.3] dark:text-black [text-shadow:0_0_1px_gray,0_0_1px_gray,0_0_1px_gray,0_0_1px_gray]
+           text-[clamp(5rem,25vw,16rem)] lg:text-[clamp(5rem,25vw,16rem)]"
           >
             NEXTBIT
           </p>

@@ -286,7 +286,7 @@ export default function ServicesList() {
           </div>
         </div>
         <div className='left-container w-1/2 h-screen overflow-hidden relative flex justify-center items-center'>
-          <div className='left-content w-full min-w-[500px] h-full max-h-[500px] relative overflow-hidden'>
+          <div className='left-content w-full min-w-[400px] h-full max-h-[400px] relative overflow-hidden'>
             {
                 services.map((el,idx)=><div className={['img_card absolute top-0 left-0 right-0 object-cover w-full h-full',cn({
                   ['opacity-100']: idx === 0,
@@ -297,8 +297,8 @@ export default function ServicesList() {
                   <Image
                     src={el.component}
                     alt={'Image 1'+idx}
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
 
                   />
                 </div>)
