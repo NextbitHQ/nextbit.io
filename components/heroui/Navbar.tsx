@@ -55,6 +55,7 @@ export default function Component(props: NavbarProps) {
         item: "hidden md:flex",
       }}
       height="60px"
+      maxWidth="full"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
@@ -83,7 +84,7 @@ export default function Component(props: NavbarProps) {
       <NavbarMenuToggle className="text-default-400 md:hidden" />
       <NavbarMenu
         className={cn(
-          "top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50 transition-all duration-300 ease-in-out",
+          "top-[calc(var(--navbar-height)_-_1px)] max-h-fit w-full bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50 transition-all duration-300 ease-in-out",
           {
             "opacity-0 translate-y-[-10px]": !isMenuOpen,
             "opacity-1 translate-y-[-10px]": isMenuOpen,
