@@ -275,17 +275,17 @@ export default function ServicesList() {
         </p>
       </div>
 
-      <section className='container_serviceScroll hidden md:flex w-full  h-screen overflow-hidden'>
-        <div className='right-container w-1/2 h-screen overflow-hidden relative'>
+      <section className='container_serviceScroll hidden md:flex w-full gap-x-0 md:gap-x-5  h-screen overflow-hidden'>
+        <div className='right-container w-3/5 h-screen overflow-hidden relative'>
           <div className='right-content w-full relative'>
             {
-                services.map((item,idx)=><div className='right-element w-full min-h-screen flex justify-center items-center text-sm p-5 overflow-visible' key={idx}>
+                services.map((item,idx)=><div className='right-element w-full min-h-screen flex justify-center items-center text-sm overflow-visible' key={idx}>
                 <ServiceCard service={item} />
             </div>)
             }
           </div>
         </div>
-        <div className='left-container w-1/2 h-screen overflow-hidden relative flex justify-center items-center'>
+        <div className='left-container w-2/5 h-screen overflow-hidden relative flex justify-center items-center'>
           <div className='left-content w-full min-w-[400px] h-full max-h-[400px] relative overflow-hidden'>
             {
                 services.map((el,idx)=><div className={['img_card absolute top-0 left-0 right-0 object-cover w-full h-full',cn({
@@ -297,7 +297,7 @@ export default function ServicesList() {
                   <Image
                     src={el.component}
                     alt={'Image 1'+idx}
-                    width={400}
+                    width={430}
                     height={400}
 
                   />
