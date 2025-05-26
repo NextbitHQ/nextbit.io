@@ -77,7 +77,7 @@ const Footer = () => {
       <div className="mt-2 flex justify-between items-center w-full py-5 px-4 border-t-1 border-default-200">
         <div className="">
           <p className="text-small text-default-400">
-            &copy; 2025 Nextbit Technologies.
+            &copy; 2025 Nextbit Studio.
           </p>
         </div>
         <div className="flex space-x-4 md:space-x-6">
